@@ -1,0 +1,26 @@
+/*
+ * Long.h
+ *
+ *  Created on: Jun 18, 2021
+ *      Author: jacob
+ */
+
+#ifndef LONG_H
+#define LONG_H
+
+
+#include "Long.h"
+#include <string>
+
+class Long: public IntVal<long>{
+public:
+	 Long(const long value);
+
+	 operator long();
+
+	 const std::string get_class() const;
+};
+
+
+
+#endif /* INCLUDE_COMMON_TYPES_NUMBER_H_ */
