@@ -5,12 +5,19 @@
  *      Author: jacob
  */
 
-#include "Long.h"
-#include "IntVal.h"
+#include "common/types/Long.h"
+#include "common/types/IntVal.h"
 
 #include <string>
 
-Long::Long(const long value) : IntVal(value) {};
+Long::Long(const long value) : IntVal(value) {}
+
+Long::Long(Long const* &lvalue): IntVal(lvalue->get_value()){
+	if(lvalue != NULL){
+		delete lvalue;
+		lvalue = this;
+	}
+}
 
 Long::operator long(){
 	return get_value();

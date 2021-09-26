@@ -8,11 +8,13 @@
 #ifndef REAL_H
 #define REAL_H
 
-#include "Number.h"
+#include "common/types/Number.h"
 
 class Real: public Number<double>{
 public:
 	Real(const double value);
+
+	Real(Real const* &real);
 
 	operator double();
 

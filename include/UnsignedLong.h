@@ -9,12 +9,14 @@
 #define UNSIGNEDLONG_H
 
 
-#include "UnsignedLong.h"
-#include "IntVal.h"
+#include "common/types/UnsignedLong.h"
+#include "common/types/IntVal.h"
 
 class UnsignedLong: public IntVal<unsigned long>{
 public:
 	 UnsignedLong(const unsigned long value);
+
+	 UnsignedLong(UnsignedLong const* &l_value);
 
 	 operator unsigned long();
 

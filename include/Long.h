@@ -9,12 +9,15 @@
 #define LONG_H
 
 
-#include "Long.h"
+#include "common/types/Long.h"
+#include "common/types/IntVal.h"
 #include <string>
 
 class Long: public IntVal<long>{
 public:
 	 Long(const long value);
+
+	 Long(Long const* &lvalue);
 
 	 operator long();
 

@@ -9,12 +9,14 @@
 #define UNSIGNEDINTEGER_H
 
 
-#include "Number.h"
-#include "IntVal.h"
+#include "common/types/Number.h"
+#include "common/types/IntVal.h"
 
 class UnsignedInteger: public IntVal<unsigned int>{
 public:
 	 UnsignedInteger(const unsigned int value);
+
+	 UnsignedInteger(UnsignedInteger const* &integer);
 
 	 operator unsigned int();
 

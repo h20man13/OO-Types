@@ -10,11 +10,13 @@
 
 #include <string>
 
-#include "Object.h"
+#include "common/types/Object.h"
 
 class String : public Object<std::string>{
 public:
 	 String(const std::string value);
+
+	 String(String const* &string);
 
 	 operator std::string();
 

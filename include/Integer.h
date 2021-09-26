@@ -9,11 +9,13 @@
 #define INTEGER_H
 
 
-#include "IntVal.h"
+#include "common/types/IntVal.h"
 
 class Integer: public IntVal<int>{
 public:
 	Integer(const int value);
+
+	Integer(Integer const* &integer);
 
 	operator int();
 

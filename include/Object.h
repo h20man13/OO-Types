@@ -10,7 +10,7 @@
 
 #include <string>
 
-#include "ObjBase.h"
+#include "common/types/ObjBase.h"
 
 template<typename val_type>
 class Object : public ObjBase{

@@ -10,11 +10,12 @@
 
 #include <string>
 
-#include "Object.h"
+#include "common/types/Object.h"
 
 class Boolean : public Object<bool>{
 public:
 	 Boolean(const bool value);
+	 Boolean(Boolean const* &bool_value);
 
 	 operator bool();
 

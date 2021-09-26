@@ -6,7 +6,7 @@
  */
 
 #include <iostream>
-#include "ObjBase.h"
+#include "common/types/ObjBase.h"
 
 template<typename Base, typename Type>
 bool instanceof(const Type&) {

@@ -9,11 +9,13 @@
 #define UNSIGNEDBYTE_H
 
 
-#include "IntVal.h"
+#include "common/types/IntVal.h"
 
 class UnsignedByte: public IntVal<unsigned char>{
 public:
 	UnsignedByte(const unsigned char value);
+
+	UnsignedByte(UnsignedByte const* &byte);
 
 	operator unsigned char();
 

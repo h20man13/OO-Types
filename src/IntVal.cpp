@@ -5,7 +5,7 @@
  *      Author: jacob
  */
 
-#include "IntVal.h"
+#include "common/types/IntVal.h"
 
 #include <string>
 
@@ -14,172 +14,242 @@ IntVal<int_type>::IntVal(const int_type value) : Number<int_type>(value){}
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator%(const int value) const {
-	return get_value() % value;
+	return this->get_value() % value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator%(const unsigned int value) const {
-	return get_value() % value;
+	return this->get_value() % value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator%(const long value) const {
-	return get_value() % value;
+	return this->get_value() % value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator%(const unsigned long value) const {
-	return get_value() % value;
+	return this->get_value() % value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator%(const short value) const {
-	return get_value() % value;
+	return this->get_value() % value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator%(const unsigned short value) const {
-	return get_value() % value;
+	return this->get_value() % value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator%(const char value) const {
-	return get_value() % value;
+	return this->get_value() % value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator%(const unsigned char value) const {
-	return get_value() % value;
+	return this->get_value() % value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator&(const int value) const {
-	return get_value() & value;
+	return this->get_value() & value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator&(const unsigned int value) const {
-	return get_value() & value;
+	return this->get_value() & value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator&(const long value) const {
-	return get_value() & value;
+	return this->get_value() & value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator&(const unsigned long value) const {
-	return get_value() & value;
+	return this->get_value() & value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator&(const short value) const {
-	return get_value() & value;
+	return this->get_value() & value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator&(const unsigned short value) const {
-	return get_value() & value;
+	return this->get_value() & value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator&(const char value) const {
-	return get_value() & value;
+	return this->get_value() & value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator&(const unsigned char value) const {
-	return get_value() & value;
+	return this->get_value() & value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator|(const int value) const {
-	return get_value() | value;
+	return this->get_value() | value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator|(const unsigned int value) const {
-	return get_value() | value;
+	return this->get_value() | value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator|(const long value) const {
-	return get_value() | value;
+	return this->get_value() | value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator|(const unsigned long value) const {
-	return get_value() | value;
+	return this->get_value() | value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator|(const short value) const {
-	return get_value() | value;
+	return this->get_value() | value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator|(const unsigned short value) const {
-	return get_value() | value;
+	return this->get_value() | value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator|(const char value) const {
-	return get_value() | value;
+	return this->get_value() | value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator|(const unsigned char value) const {
-	return get_value() | value;
+	return this->get_value() | value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator^(const int value) const {
-	return get_value() ^ value;
+	return this->get_value() ^ value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator^(const unsigned int value) const {
-	return get_value() ^ value;
+	return this->get_value() ^ value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator^(const long value) const {
-	return get_value() ^ value;
+	return this->get_value() ^ value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator^(const unsigned long value) const {
-	return get_value() ^ value;
+	return this->get_value() ^ value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator^(const short value) const {
-	return get_value() ^ value;
+	return this->get_value() ^ value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator^(const unsigned short value) const {
-	return get_value() ^ value;
+	return this->get_value() ^ value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator^(const char value) const {
-	return get_value() ^ value;
+	return this->get_value() ^ value;
 }
 
 template<typename int_type>
 const int_type IntVal<int_type>::operator^(const unsigned char value) const {
-	return get_value() ^ value;
+	return this->get_value() ^ value;
 }
 
 template<typename int_type>
-const int_type IntVal<int_type>::operator<<(const int_type value) const {
-	return get_value() << value;
+const int_type IntVal<int_type>::operator<<(const int value) const {
+	return this->get_value() << value;
 }
 
 template<typename int_type>
-const int_type IntVal<int_type>::operator>>(const int_type value) const {
-	return get_value() >> value;
+const int_type IntVal<int_type>::operator<<(const unsigned int value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator<<(const long value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator<<(const unsigned long value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator<<(const short value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator<<(const unsigned short value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator<<(const char value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator<<(const unsigned char value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator>>(const int value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator>>(const unsigned int value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator>>(const long value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator>>(const unsigned long value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator>>(const short value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator>>(const unsigned short value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator>>(const char value) const {
+	return this->get_value() << value;
+}
+
+template<typename int_type>
+const int_type IntVal<int_type>::operator>>(const unsigned char value) const {
+	return this->get_value() << value;
 }
 
 template<typename int_type>
@@ -209,7 +279,7 @@ void IntVal<int_type>::operator>>=(const int_type value){
 
 template<typename int_type>
 const int_type  IntVal<int_type>::operator~() const {
-	return ~get_value();
+	return ~this->get_value();
 }
 
 

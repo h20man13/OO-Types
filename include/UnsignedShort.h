@@ -9,11 +9,13 @@
 #define UNSIGNEDSHORT_H
 
 
-#include "IntVal.h"
+#include "common/types/IntVal.h"
 
 class UnsignedShort: public IntVal<unsigned short int>{
 public:
 	UnsignedShort(const unsigned short int value);
+
+	UnsignedShort(UnsignedShort const* &s_value);
 
 	operator unsigned short();
 

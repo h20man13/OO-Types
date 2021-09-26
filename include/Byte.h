@@ -9,11 +9,13 @@
 #define BYTE_H
 
 
-#include "IntVal.h"
+#include "common/types/IntVal.h"
 
 class Byte: public IntVal<char>{
 public:
 	Byte(const char value);
+
+	Byte(Byte const* &byte);
 
 	operator char();
 

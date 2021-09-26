@@ -9,11 +9,13 @@
 #define SHORT_H
 
 
-#include "IntVal.h"
+#include "common/types/IntVal.h"
 
 class Short: public IntVal<short int>{
 public:
 	Short(const short int value);
+
+	Short(Short const* &value);
 
 	operator short int();
 

@@ -6,8 +6,8 @@
  */
 
 #include <iostream>
-#include "Object.h"
-#include "String.h"
+#include "common/types/Object.h"
+#include "common/types/String.h"
 
 template<typename val_type>
 Object<val_type>::Object(const val_type value){
@@ -134,7 +134,7 @@ const bool Object<val_type>::bool_value() const {
 	if(instanceof<String>(this)){
 		return get_value() != "";
 	} else {
-		return get_value() !e= 0 ? true : false;
+		return get_value() != 0 ? true : false;
 	}
 }
 

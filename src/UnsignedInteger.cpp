@@ -5,12 +5,19 @@
  *      Author: jacob
  */
 
-#include "UnsignedInteger.h"
-#include "IntVal.h"
+#include "common/types/UnsignedInteger.h"
+#include "common/types/IntVal.h"
 
 #include <string>
 
-UnsignedInteger::UnsignedInteger(const unsigned int value) : IntVal(value) {};
+UnsignedInteger::UnsignedInteger(const unsigned int value) : IntVal(value) {}
+
+UnsignedInteger::UnsignedInteger(UnsignedInteger const* &integer): IntVal(integer->get_value()){
+	if(integer != NULL){
+		delete integer;
+		integer = this;
+	}
+}
 
 UnsignedInteger::operator unsigned int(){
 	return get_value();

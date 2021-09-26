@@ -8,7 +8,7 @@
 #ifndef NUMBER_H
 #define NUMBER_H
 
-#include "Object.h"
+#include "common/types/Object.h"
 
 template<typename num_type>
 class Number: public Object<num_type>{
