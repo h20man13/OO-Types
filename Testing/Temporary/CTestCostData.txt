@@ -1,0 +1,7 @@
+IntegerTest 12 0.000171324
+FloatTest 6 0.000346144
+UnsignedIntegerTest 4 0.00143051
+UnsignedByte 1 0.00310993
+UnsignedLong 2 0.00115705
+UnsignedShortTest 2 0.00127804
+---

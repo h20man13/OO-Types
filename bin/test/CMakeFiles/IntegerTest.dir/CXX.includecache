@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jacob/Desktop/OO-Types/test/IntegerTest.cpp
+Integer.h
+/home/jacob/Desktop/OO-Types/test/Integer.h
+Object.h
+/home/jacob/Desktop/OO-Types/test/Object.h
+TypeOpUtils.h
+/home/jacob/Desktop/OO-Types/test/TypeOpUtils.h
+TestUtils.h
+/home/jacob/Desktop/OO-Types/test/TestUtils.h
+
+/home/jacob/Desktop/OO-Types/test/TestUtils.h
+iostream
+-
+string
+-
+stdlib.h
+-
+
+include/Integer.h
+Number.h
+include/Number.h
+
+include/Number.h
+Object.h
+include/Object.h
+
+include/Object.h
+string
+-
+
+include/TypeOpUtils.h
+Object.h
+include/Object.h
+

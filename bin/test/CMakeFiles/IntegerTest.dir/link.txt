@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/IntegerTest.dir/__/__/test/IntegerTest.cpp.o  -o IntegerTest ../../libSRCLIB.a 

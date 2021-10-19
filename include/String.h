@@ -10,17 +10,20 @@
 
 #include <string>
 
-#include "common/types/Object.h"
+#include "Object.h"
 
-class String : public Object<std::string>{
-public:
-	 String(const std::string value);
+class String : public Object{
+ private:
+  std::string value;
+ public:
+  String(const std::string& value);
+  String(const String& value);
 
-	 String(String const* &string);
+  operator std::string();
 
-	 operator std::string();
-
-	 const std::string get_class() const;
+  const std::string get_class() const;
+  const std::string to_string() const;
+  const bool bool_value() const;
 };
 
 

@@ -1,0 +1,117 @@
+Start testing: Oct 17 19:59 EDT
+----------------------------------------------------------
+1/6 Testing: FloatTest
+1/6 Test: FloatTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/FloatTest"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"FloatTest" start time: Oct 17 19:59 EDT
+Output:
+----------------------------------------------------------
+Success: Test addition_float_test passed
+Success: Test boolean_float_test passed
+Success: Test string_float_test passed
+Success: Test class_float_test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"FloatTest" end time: Oct 17 19:59 EDT
+"FloatTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/6 Testing: IntegerTest
+2/6 Test: IntegerTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/IntegerTest"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"IntegerTest" start time: Oct 17 19:59 EDT
+Output:
+----------------------------------------------------------
+Success: Test addition_integer_test passed
+Success: Test boolean_integer_test passed
+Success: Test string_integer_test passed
+Success: Test class_integer_test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"IntegerTest" end time: Oct 17 19:59 EDT
+"IntegerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/6 Testing: UnsignedByte
+3/6 Test: UnsignedByte
+Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedByte"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"UnsignedByte" start time: Oct 17 19:59 EDT
+Output:
+----------------------------------------------------------
+Success: Test addition_unsigned_byte_test passed
+Success: Test boolean_unsigned_byte_test passed
+Success: Test string_unsigned_byte_test passed
+Success: Test class_unsigned_byte_test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UnsignedByte" end time: Oct 17 19:59 EDT
+"UnsignedByte" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/6 Testing: UnsignedIntegerTest
+4/6 Test: UnsignedIntegerTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedIntegerTest"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"UnsignedIntegerTest" start time: Oct 17 19:59 EDT
+Output:
+----------------------------------------------------------
+Success: Test addition_unsigned_integer_test passed
+Success: Test boolean_unsigned_integer_test passed
+Success: Test string_unsigned_integer_test passed
+Success: Test class_unsigned_integer_test passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"UnsignedIntegerTest" end time: Oct 17 19:59 EDT
+"UnsignedIntegerTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/6 Testing: UnsignedLong
+5/6 Test: UnsignedLong
+Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedLong"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"UnsignedLong" start time: Oct 17 19:59 EDT
+Output:
+----------------------------------------------------------
+Success: Test addition_unsigned_long_test passed
+Success: Test boolean_unsigned_long_test passed
+Success: Test string_unsigned_long_test passed
+Success: Test class_unsigned_long_test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UnsignedLong" end time: Oct 17 19:59 EDT
+"UnsignedLong" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: UnsignedShortTest
+6/6 Test: UnsignedShortTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedShortTest"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"UnsignedShortTest" start time: Oct 17 19:59 EDT
+Output:
+----------------------------------------------------------
+Success: Test addition_unsigned_short_test passed
+Success: Test boolean_unsigned_short_test passed
+Success: Test string_unsigned_short_test passed
+Success: Test class_unsigned_short_test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UnsignedShortTest" end time: Oct 17 19:59 EDT
+"UnsignedShortTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 17 19:59 EDT

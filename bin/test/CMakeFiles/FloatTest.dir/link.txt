@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/FloatTest.dir/__/__/test/FloatTest.cpp.o  -o FloatTest ../../libSRCLIB.a 

@@ -5,8 +5,7 @@
  *      Author: jacob
  */
 
-#include "common/types/UnsignedLong.h"
-#include "common/types/IntVal.h"
+#include "UnsignedLong.h"
 
 #include <string>
 
@@ -15,17 +14,12 @@
  * @param value the initial value it should be set to
  */
 
-UnsignedLong::UnsignedLong(const unsigned long value): IntVal(value) {}
+UnsignedLong::UnsignedLong(const unsigned long value): value(value) {}
 
-UnsignedLong::UnsignedLong(UnsignedLong const* &l_value): IntVal(l_value->get_value()){
-	if(l_value != NULL){
-		delete l_value;
-		l_value = this;
-	}
-}
+UnsignedLong::UnsignedLong(const UnsignedLong &l_value): value(l_value.value){}
 
 UnsignedLong::operator unsigned long(){
-	return get_value();
+	return value;
 }
 
 /**
@@ -37,4 +31,51 @@ const std::string UnsignedLong::get_class() const {
 	return "Unsigned Long";
 }
 
+const std::string UnsignedLong::to_string() const {
+	return std::to_string(value);
+}
+
+const short UnsignedLong::short_value() const{
+	return (short)value;
+}
+
+const unsigned short UnsignedLong::unsigned_short_value() const{
+	return (unsigned short)value;
+}
+
+const short UnsignedLong::int_value() const{
+	return (int)value;
+}
+
+const unsigned short UnsignedLong::unsigned_int_value() const{
+	return (unsigned int)value;
+}
+
+const char UnsignedLong::byte_value() const{
+	return (char)value;
+}
+
+const unsigned char UnsignedLong::unsigned_byte_value() const{
+	return (unsigned char)value;
+}
+
+const short UnsignedLong::long_value() const{
+	return (long)value;
+}
+
+const unsigned short UnsignedLong::unsigned_long_value() const{
+	return (unsigned long)value;
+}
+
+const float UnsignedLong::float_value() const{
+	return (float)value;
+}
+
+const double UnsignedLong::double_value() const{
+	return (double)value;
+}
+
+const bool UnsignedLong::bool_value() const {
+	return (bool)value;
+}
 

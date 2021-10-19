@@ -5,22 +5,26 @@
  *      Author: jacob
  */
 
-#include "common/types/String.h"
-#include "common/types/Object.h"
+#include "String.h"
+#include "Object.h"
 
-String::String(const std::string value) : Object(value) {}
+String::String(const std::string& value): value(value){}
 
-String::String(String const* &string): Object(string->get_value()){
-	if(string != NULL){
-		delete string;
-		string = this;
-	}
-}
+String::String(const String &value) : value(value.value){}
 
 String::operator std::string(){
-	return get_value();
+	return value;
 }
+
 const std::string String::get_class() const {
 	return "String";
+}
+
+const std::string String::to_string() const {
+  return value;
+}
+
+const bool String::bool_value() const {
+	return value == "";
 }
 

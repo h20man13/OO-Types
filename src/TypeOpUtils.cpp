@@ -5,33 +5,38 @@
  *      Author: jacob
  */
 
-#include "common/types/TypeOpUtils.h"
-#include "common/types/String.h"
-#include "common/types/Real.h"
-#include "common/types/Integer.h"
-#include "common/types/UnsignedInteger.h"
-#include "common/types/Long.h"
-#include "common/types/UnsignedLong.h"
-#include "common/types/Short.h"
-#include "common/types/UnsignedShort.h"
-#include "common/types/Byte.h"
-#include "common/types/UnsignedByte.h"
-#include "common/types/Boolean.h"
+#include "TypeOpUtils.h"
+#include "String.h"
+#include "Double.h"
+#include "Float.h"
+#include "Integer.h"
+#include "UnsignedInteger.h"
+#include "Long.h"
+#include "UnsignedLong.h"
+#include "Short.h"
+#include "UnsignedShort.h"
+#include "Byte.h"
+#include "UnsignedByte.h"
+#include "Boolean.h"
 
-ObjBase* const add(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const add(Object* const left, Object* const right) {
 	if (instanceof<String>(left)) {
 
-		return new String(left->to_string() + right->to_string());
+		return new String(right->to_string() + left->to_string());
 
 	} else if (instanceof<Integer>(left)) {
-		Integer *int_left = (Integer* const ) left;
+		Integer* int_left = (Integer*)left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Integer(*int_left + *real_right);
+			Double* double_right = (Double*)right;
+			return new Double(*int_left + *double_right);
 
+		} else if (instanceof<Float>(right)) {
+
+			Float* float_right = (Float*)right;
+			return new Float(*int_left + *float_right);
+			
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
@@ -40,17 +45,17 @@ ObjBase* const add(const ObjBase *const left,
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Integer(*int_left + *int_right);
+			return new UnsignedInteger(*int_left + *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Integer(*int_left + *long_right);
+			return new Long(*int_left + *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Integer(*int_left + *long_right);
+			return new UnsignedLong(*int_left + *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
@@ -60,7 +65,7 @@ ObjBase* const add(const ObjBase *const left,
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Integer(*int_left + *short_right);
+			return new UnsignedInteger(*int_left + *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -70,7 +75,7 @@ ObjBase* const add(const ObjBase *const left,
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Integer(*int_left + *byte_right);
+			return new UnsignedInteger(*int_left + *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
@@ -83,10 +88,15 @@ ObjBase* const add(const ObjBase *const left,
 	} else if (instanceof<UnsignedInteger>(left)) {
 		UnsignedInteger *int_left = (UnsignedInteger* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedInteger(*int_left + *real_right);
+			Double* double_right = (Double*)right;
+			return new Double(*int_left + *double_right);
+
+		} if (instanceof<Float>(right)) {
+
+			Float* double_right = (Float*)right;
+			return new Float(*int_left + *double_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -101,21 +111,21 @@ ObjBase* const add(const ObjBase *const left,
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new UnsignedInteger(*int_left + *long_right);
+			return new UnsignedLong(*int_left + *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new UnsignedInteger(*int_left + *long_right);
+			return new UnsignedLong(*int_left + *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
-			Short *short_right = (Short* const ) right;
+			Short *short_right = (Short* const )right;
 			return new UnsignedInteger(*int_left + *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
-			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			UnsignedShort *short_right = (UnsignedShort* const) right;
 			return new UnsignedInteger(*int_left + *short_right);
 
 		} else if (instanceof<Byte>(right)) {
@@ -139,10 +149,15 @@ ObjBase* const add(const ObjBase *const left,
 	} else if (instanceof<Long>(left)) {
 		Long *long_left = (Long* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Long((long) (*long_left + *real_right));
+			Double *real_right = (Double*)right;
+			return new Double(*long_left + *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *real_right = (Float*)right;
+			return new Float(*long_left + *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -152,7 +167,7 @@ ObjBase* const add(const ObjBase *const left,
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Long(*long_left + *int_right);
+			return new UnsignedLong(*long_left + *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
@@ -162,7 +177,7 @@ ObjBase* const add(const ObjBase *const left,
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Long(*long_left + *long_right);
+			return new UnsignedLong(*long_left + *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
@@ -172,7 +187,7 @@ ObjBase* const add(const ObjBase *const left,
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Long(*long_left + *short_right);
+			return new UnsignedLong(*long_left + *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -195,10 +210,15 @@ ObjBase* const add(const ObjBase *const left,
 	} else if (instanceof<UnsignedLong>(left)) {
 		UnsignedLong *long_left = (UnsignedLong* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedLong(*long_left + *real_right);
+			Double *real_right = (Double*) right;
+			return new Double(*long_left + *real_right);
+
+		} if (instanceof<Float>(right)) {
+
+			Float *real_right = (Float*) right;
+			return new Float(*long_left + *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -251,10 +271,15 @@ ObjBase* const add(const ObjBase *const left,
 	} else if (instanceof<Short>(left)) {
 		Short *long_left = (Short* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Short(*long_left + *real_right);
+			Double* real_right = (Double*)right;
+			return new Double(*long_left + *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float* real_right = (Float*)right;
+			return new Float(*long_left + *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -307,30 +332,35 @@ ObjBase* const add(const ObjBase *const left,
 	} else if (instanceof<UnsignedShort>(left)) {
 		UnsignedShort *long_left = (UnsignedShort* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedShort(*long_left + *real_right);
+			Double *real_right = (Double* const )right;
+			return new Double(*long_left + *real_right);
+
+		} else if (instanceof<Float>(right)){
+			
+		    Float *real_right = (Float* const )right;
+			return new Float(*long_left + *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new UnsignedShort(*long_left + *int_right);
+			return new UnsignedInteger(*long_left + *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new UnsignedShort(*long_left + *int_right);
+			return new UnsignedInteger(*long_left + *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new UnsignedShort(*long_left + *long_right);
+			return new UnsignedLong(*long_left + *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new UnsignedShort(*long_left + *long_right);
+			return new UnsignedLong(*long_left + *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
@@ -363,40 +393,45 @@ ObjBase* const add(const ObjBase *const left,
 	} else if (instanceof<Byte>(left)) {
 		Byte *long_left = (Byte* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Byte(*long_left + *real_right);
+			Double *real_right = (Double*)right;
+			return new Double(*long_left + *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *real_right = (Float*)right;
+			return new Float(*long_left + *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Byte(*long_left + *int_right);
+			return new Integer(*long_left + *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Byte(*long_left + *int_right);
+			return new UnsignedInteger(*long_left + *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Byte(*long_left + *long_right);
+			return new Long(*long_left + *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Byte(*long_left + *long_right);
+			return new UnsignedLong(*long_left + *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Byte(*long_left + *short_right);
+			return new Short(*long_left + *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Byte(*long_left + *short_right);
+			return new UnsignedShort(*long_left + *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -406,7 +441,7 @@ ObjBase* const add(const ObjBase *const left,
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Byte(*long_left + *byte_right);
+			return new UnsignedByte(*long_left + *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
@@ -419,40 +454,45 @@ ObjBase* const add(const ObjBase *const left,
 	} else if (instanceof<UnsignedByte>(left)) {
 		UnsignedByte *long_left = (UnsignedByte* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedByte(*long_left + *real_right);
+			Double *real_right = (Double* const) right;
+			return new Double(*long_left + *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Float(*long_left + *float_right);
 
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new UnsignedByte(*long_left + *int_right);
+			return new UnsignedInteger(*long_left + *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new UnsignedByte(*long_left + *int_right);
+			return new UnsignedInteger(*long_left + *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new UnsignedByte(*long_left + *long_right);
+			return new UnsignedLong(*long_left + *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new UnsignedByte(*long_left + *long_right);
+			return new UnsignedLong(*long_left + *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new UnsignedByte(*long_left + *short_right);
+			return new UnsignedShort(*long_left + *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new UnsignedByte(*long_left + *short_right);
+			return new UnsignedShort(*long_left + *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -473,25 +513,207 @@ ObjBase* const add(const ObjBase *const left,
 			return NULL;
 		}
 	} else if (instanceof<Boolean>(left)) {
-		Boolean *bool_left = (Boolean* const ) left;
-		bool b_right = right->bool_value();
+		Boolean *bool_left = (Boolean*)left;
 
-		return new Boolean(*bool_left + b_right);
+		if (instanceof<Boolean>(right)) {
+
+			Double *real_right = (Double* const) right;
+			return new Double(*bool_left + *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Float(*bool_left + *float_right);
+
+		} else if (instanceof<Integer>(right)) {
+
+			Integer *int_right = (Integer* const ) right;
+			return new Integer(*bool_left + *int_right);
+
+		} else if (instanceof<UnsignedInteger>(right)) {
+
+			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
+			return new UnsignedInteger(*bool_left + *int_right);
+
+		} else if (instanceof<Long>(right)) {
+
+			Long *long_right = (Long* const ) right;
+			return new Long(*bool_left + *long_right);
+
+		} else if (instanceof<UnsignedLong>(right)) {
+
+			UnsignedLong *long_right = (UnsignedLong* const ) right;
+			return new UnsignedLong(*bool_left + *long_right);
+
+		} else if (instanceof<Short>(right)) {
+
+			Short *short_right = (Short* const ) right;
+			return new Short(*bool_left + *short_right);
+
+		} else if (instanceof<UnsignedShort>(right)) {
+
+			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			return new UnsignedShort(*bool_left + *short_right);
+
+		} else if (instanceof<Byte>(right)) {
+
+			Byte *byte_right = (Byte* const ) right;
+			return new Byte(*bool_left + *byte_right);
+
+		} else if (instanceof<UnsignedByte>(right)) {
+
+			UnsignedByte *byte_right = (UnsignedByte* const ) right;
+			return new UnsignedByte(*bool_left + *byte_right);
+
+		} else if (instanceof<Boolean>(right)) {
+
+			Boolean *bool_right = (Boolean* const ) right;
+			return new Integer(*bool_left + *bool_right);
+
+		} else {
+			return NULL;
+		}
+	} else if (instanceof<Float>(left)) {
+		Float *long_left = (Float* const ) left;
+
+		if (instanceof<Double>(right)) {
+
+			Double *real_right = (Double* const) right;
+			return new Double(*long_left + *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Float(*long_left + *float_right);
+
+		} else if (instanceof<Integer>(right)) {
+
+			Integer *int_right = (Integer* const ) right;
+			return new Float(*long_left + *int_right);
+
+		} else if (instanceof<UnsignedInteger>(right)) {
+
+			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
+			return new Float(*long_left + *int_right);
+
+		} else if (instanceof<Long>(right)) {
+
+			Long *long_right = (Long* const ) right;
+			return new Float(*long_left + *long_right);
+
+		} else if (instanceof<UnsignedLong>(right)) {
+
+			UnsignedLong *long_right = (UnsignedLong* const ) right;
+			return new Float(*long_left + *long_right);
+
+		} else if (instanceof<Short>(right)) {
+
+			Short *short_right = (Short* const ) right;
+			return new Float(*long_left + *short_right);
+
+		} else if (instanceof<UnsignedShort>(right)) {
+
+			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			return new Float(*long_left + *short_right);
+
+		} else if (instanceof<Byte>(right)) {
+
+			Byte *byte_right = (Byte* const ) right;
+			return new Float(*long_left + *byte_right);
+
+		} else if (instanceof<UnsignedByte>(right)) {
+
+			UnsignedByte *byte_right = (UnsignedByte* const ) right;
+			return new Float(*long_left + *byte_right);
+
+		} else if (instanceof<Boolean>(right)) {
+
+			Boolean *bool_right = (Boolean* const ) right;
+			return new Float(*long_left + *bool_right);
+
+		} else {
+			return NULL;
+		}
+	} else if (instanceof<Double>(left)) {
+		Double *long_left = (Double* const ) left;
+
+		if (instanceof<Double>(right)) {
+
+			Double *real_right = (Double* const) right;
+			return new Double(*long_left + *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Double(*long_left + *float_right);
+
+		} else if (instanceof<Integer>(right)) {
+
+			Integer *int_right = (Integer* const ) right;
+			return new Double(*long_left + *int_right);
+
+		} else if (instanceof<UnsignedInteger>(right)) {
+
+			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
+			return new Double(*long_left + *int_right);
+
+		} else if (instanceof<Long>(right)) {
+
+			Long *long_right = (Long* const ) right;
+			return new Double(*long_left + *long_right);
+
+		} else if (instanceof<UnsignedLong>(right)) {
+
+			UnsignedLong *long_right = (UnsignedLong* const ) right;
+			return new Double(*long_left + *long_right);
+
+		} else if (instanceof<Short>(right)) {
+
+			Short *short_right = (Short* const ) right;
+			return new Double(*long_left + *short_right);
+
+		} else if (instanceof<UnsignedShort>(right)) {
+
+			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			return new Double(*long_left + *short_right);
+
+		} else if (instanceof<Byte>(right)) {
+
+			Byte *byte_right = (Byte* const ) right;
+			return new Double(*long_left + *byte_right);
+
+		} else if (instanceof<UnsignedByte>(right)) {
+
+			UnsignedByte *byte_right = (UnsignedByte* const ) right;
+			return new Double(*long_left + *byte_right);
+
+		} else if (instanceof<Boolean>(right)) {
+
+			Boolean *bool_right = (Boolean* const ) right;
+			return new Double(*long_left + *bool_right);
+
+		} else {
+			return NULL;
+		}
 	} else {
 		return NULL;
 	}
 }
 
-ObjBase* const sub(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const sub(Object* const left, Object* const right) {
 	if (instanceof<Integer>(left)) {
-		Integer *int_left = (Integer* const ) left;
+		Integer* int_left = (Integer*)left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Integer(*int_left - *real_right);
+			Double* double_right = (Double*)right;
+			return new Double(*int_left - *double_right);
 
+		} else if (instanceof<Float>(right)) {
+
+			Float* float_right = (Float*)right;
+			return new Float(*int_left - *float_right);
+			
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
@@ -500,17 +722,17 @@ ObjBase* const sub(const ObjBase *const left,
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Integer(*int_left - *int_right);
+			return new UnsignedInteger(*int_left - *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Integer(*int_left - *long_right);
+			return new Long(*int_left - *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Integer(*int_left - *long_right);
+			return new UnsignedLong(*int_left - *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
@@ -520,7 +742,7 @@ ObjBase* const sub(const ObjBase *const left,
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Integer(*int_left - *short_right);
+			return new UnsignedInteger(*int_left - *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -530,7 +752,7 @@ ObjBase* const sub(const ObjBase *const left,
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Integer(*int_left - *byte_right);
+			return new UnsignedInteger(*int_left - *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
@@ -543,10 +765,15 @@ ObjBase* const sub(const ObjBase *const left,
 	} else if (instanceof<UnsignedInteger>(left)) {
 		UnsignedInteger *int_left = (UnsignedInteger* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedInteger(*int_left - *real_right);
+			Double* double_right = (Double*)right;
+			return new Double(*int_left - *double_right);
+
+		} if (instanceof<Float>(right)) {
+
+			Float* double_right = (Float*)right;
+			return new Float(*int_left - *double_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -561,21 +788,21 @@ ObjBase* const sub(const ObjBase *const left,
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new UnsignedInteger(*int_left - *long_right);
+			return new UnsignedLong(*int_left - *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new UnsignedInteger(*int_left - *long_right);
+			return new UnsignedLong(*int_left - *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
-			Short *short_right = (Short* const ) right;
+			Short *short_right = (Short* const )right;
 			return new UnsignedInteger(*int_left - *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
-			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			UnsignedShort *short_right = (UnsignedShort* const) right;
 			return new UnsignedInteger(*int_left - *short_right);
 
 		} else if (instanceof<Byte>(right)) {
@@ -599,10 +826,15 @@ ObjBase* const sub(const ObjBase *const left,
 	} else if (instanceof<Long>(left)) {
 		Long *long_left = (Long* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Long((long) (*long_left - *real_right));
+			Double *real_right = (Double*)right;
+			return new Double(*long_left - *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *real_right = (Float*)right;
+			return new Float(*long_left - *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -612,7 +844,7 @@ ObjBase* const sub(const ObjBase *const left,
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Long(*long_left - *int_right);
+			return new UnsignedLong(*long_left - *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
@@ -622,7 +854,7 @@ ObjBase* const sub(const ObjBase *const left,
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Long(*long_left - *long_right);
+			return new UnsignedLong(*long_left - *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
@@ -632,7 +864,7 @@ ObjBase* const sub(const ObjBase *const left,
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Long(*long_left - *short_right);
+			return new UnsignedLong(*long_left - *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -655,10 +887,15 @@ ObjBase* const sub(const ObjBase *const left,
 	} else if (instanceof<UnsignedLong>(left)) {
 		UnsignedLong *long_left = (UnsignedLong* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedLong(*long_left - *real_right);
+			Double *real_right = (Double*) right;
+			return new Double(*long_left - *real_right);
+
+		} if (instanceof<Float>(right)) {
+
+			Float *real_right = (Float*) right;
+			return new Float(*long_left - *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -711,10 +948,15 @@ ObjBase* const sub(const ObjBase *const left,
 	} else if (instanceof<Short>(left)) {
 		Short *long_left = (Short* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Short(*long_left - *real_right);
+			Double* real_right = (Double*)right;
+			return new Double(*long_left - *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float* real_right = (Float*)right;
+			return new Float(*long_left - *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -767,30 +1009,35 @@ ObjBase* const sub(const ObjBase *const left,
 	} else if (instanceof<UnsignedShort>(left)) {
 		UnsignedShort *long_left = (UnsignedShort* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedShort(*long_left - *real_right);
+			Double *real_right = (Double* const )right;
+			return new Double(*long_left - *real_right);
+
+		} else if (instanceof<Float>(right)){
+			
+		    Float *real_right = (Float* const )right;
+			return new Float(*long_left - *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new UnsignedShort(*long_left - *int_right);
+			return new UnsignedInteger(*long_left - *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new UnsignedShort(*long_left - *int_right);
+			return new UnsignedInteger(*long_left - *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new UnsignedShort(*long_left - *long_right);
+			return new UnsignedLong(*long_left - *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new UnsignedShort(*long_left - *long_right);
+			return new UnsignedLong(*long_left - *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
@@ -823,40 +1070,45 @@ ObjBase* const sub(const ObjBase *const left,
 	} else if (instanceof<Byte>(left)) {
 		Byte *long_left = (Byte* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Byte(*long_left - *real_right);
+			Double *real_right = (Double*)right;
+			return new Double(*long_left - *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *real_right = (Float*)right;
+			return new Float(*long_left - *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Byte(*long_left - *int_right);
+			return new Integer(*long_left - *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Byte(*long_left - *int_right);
+			return new UnsignedInteger(*long_left - *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Byte(*long_left - *long_right);
+			return new Long(*long_left - *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Byte(*long_left - *long_right);
+			return new UnsignedLong(*long_left - *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Byte(*long_left - *short_right);
+			return new Short(*long_left - *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Byte(*long_left - *short_right);
+			return new UnsignedShort(*long_left - *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -866,7 +1118,7 @@ ObjBase* const sub(const ObjBase *const left,
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Byte(*long_left - *byte_right);
+			return new UnsignedByte(*long_left - *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
@@ -879,40 +1131,45 @@ ObjBase* const sub(const ObjBase *const left,
 	} else if (instanceof<UnsignedByte>(left)) {
 		UnsignedByte *long_left = (UnsignedByte* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedByte(*long_left - *real_right);
+			Double *real_right = (Double* const) right;
+			return new Double(*long_left - *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Float(*long_left - *float_right);
 
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new UnsignedByte(*long_left - *int_right);
+			return new UnsignedInteger(*long_left - *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new UnsignedByte(*long_left - *int_right);
+			return new UnsignedInteger(*long_left - *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new UnsignedByte(*long_left - *long_right);
+			return new UnsignedLong(*long_left - *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new UnsignedByte(*long_left - *long_right);
+			return new UnsignedLong(*long_left - *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new UnsignedByte(*long_left - *short_right);
+			return new UnsignedShort(*long_left - *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new UnsignedByte(*long_left - *short_right);
+			return new UnsignedShort(*long_left - *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -932,21 +1189,208 @@ ObjBase* const sub(const ObjBase *const left,
 		} else {
 			return NULL;
 		}
+	} else if (instanceof<Boolean>(left)) {
+		Boolean *bool_left = (Boolean*)left;
+
+		if (instanceof<Boolean>(right)) {
+
+			Double *real_right = (Double* const) right;
+			return new Double(*bool_left - *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Float(*bool_left - *float_right);
+
+		} else if (instanceof<Integer>(right)) {
+
+			Integer *int_right = (Integer* const ) right;
+			return new Integer(*bool_left - *int_right);
+
+		} else if (instanceof<UnsignedInteger>(right)) {
+
+			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
+			return new UnsignedInteger(*bool_left - *int_right);
+
+		} else if (instanceof<Long>(right)) {
+
+			Long *long_right = (Long* const ) right;
+			return new Long(*bool_left - *long_right);
+
+		} else if (instanceof<UnsignedLong>(right)) {
+
+			UnsignedLong *long_right = (UnsignedLong* const ) right;
+			return new UnsignedLong(*bool_left - *long_right);
+
+		} else if (instanceof<Short>(right)) {
+
+			Short *short_right = (Short* const ) right;
+			return new Short(*bool_left - *short_right);
+
+		} else if (instanceof<UnsignedShort>(right)) {
+
+			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			return new UnsignedShort(*bool_left - *short_right);
+
+		} else if (instanceof<Byte>(right)) {
+
+			Byte *byte_right = (Byte* const ) right;
+			return new Byte(*bool_left - *byte_right);
+
+		} else if (instanceof<UnsignedByte>(right)) {
+
+			UnsignedByte *byte_right = (UnsignedByte* const ) right;
+			return new UnsignedByte(*bool_left - *byte_right);
+
+		} else if (instanceof<Boolean>(right)) {
+
+			Boolean *bool_right = (Boolean* const ) right;
+			return new Integer(*bool_left - *bool_right);
+
+		} else {
+			return NULL;
+		}
+	} else if (instanceof<Float>(left)) {
+		Float *long_left = (Float* const ) left;
+
+		if (instanceof<Double>(right)) {
+
+			Double *real_right = (Double* const) right;
+			return new Double(*long_left - *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Float(*long_left - *float_right);
+
+		} else if (instanceof<Integer>(right)) {
+
+			Integer *int_right = (Integer* const ) right;
+			return new Float(*long_left - *int_right);
+
+		} else if (instanceof<UnsignedInteger>(right)) {
+
+			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
+			return new Float(*long_left - *int_right);
+
+		} else if (instanceof<Long>(right)) {
+
+			Long *long_right = (Long* const ) right;
+			return new Float(*long_left - *long_right);
+
+		} else if (instanceof<UnsignedLong>(right)) {
+
+			UnsignedLong *long_right = (UnsignedLong* const ) right;
+			return new Float(*long_left - *long_right);
+
+		} else if (instanceof<Short>(right)) {
+
+			Short *short_right = (Short* const ) right;
+			return new Float(*long_left - *short_right);
+
+		} else if (instanceof<UnsignedShort>(right)) {
+
+			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			return new Float(*long_left - *short_right);
+
+		} else if (instanceof<Byte>(right)) {
+
+			Byte *byte_right = (Byte* const ) right;
+			return new Float(*long_left - *byte_right);
+
+		} else if (instanceof<UnsignedByte>(right)) {
+
+			UnsignedByte *byte_right = (UnsignedByte* const ) right;
+			return new Float(*long_left - *byte_right);
+
+		} else if (instanceof<Boolean>(right)) {
+
+			Boolean *bool_right = (Boolean* const ) right;
+			return new Float(*long_left - *bool_right);
+
+		} else {
+			return NULL;
+		}
+	} else if (instanceof<Double>(left)) {
+		Double *long_left = (Double* const ) left;
+
+		if (instanceof<Double>(right)) {
+
+			Double *real_right = (Double* const) right;
+			return new Double(*long_left - *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Double(*long_left - *float_right);
+
+		} else if (instanceof<Integer>(right)) {
+
+			Integer *int_right = (Integer* const ) right;
+			return new Double(*long_left - *int_right);
+
+		} else if (instanceof<UnsignedInteger>(right)) {
+
+			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
+			return new Double(*long_left - *int_right);
+
+		} else if (instanceof<Long>(right)) {
+
+			Long *long_right = (Long* const ) right;
+			return new Double(*long_left - *long_right);
+
+		} else if (instanceof<UnsignedLong>(right)) {
+
+			UnsignedLong *long_right = (UnsignedLong* const ) right;
+			return new Double(*long_left - *long_right);
+
+		} else if (instanceof<Short>(right)) {
+
+			Short *short_right = (Short* const ) right;
+			return new Double(*long_left - *short_right);
+
+		} else if (instanceof<UnsignedShort>(right)) {
+
+			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			return new Double(*long_left - *short_right);
+
+		} else if (instanceof<Byte>(right)) {
+
+			Byte *byte_right = (Byte* const ) right;
+			return new Double(*long_left - *byte_right);
+
+		} else if (instanceof<UnsignedByte>(right)) {
+
+			UnsignedByte *byte_right = (UnsignedByte* const ) right;
+			return new Double(*long_left - *byte_right);
+
+		} else if (instanceof<Boolean>(right)) {
+
+			Boolean *bool_right = (Boolean* const ) right;
+			return new Double(*long_left - *bool_right);
+
+		} else {
+			return NULL;
+		}
 	} else {
 		return NULL;
 	}
 }
 
-ObjBase* const mult(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const mult(Object* const left, Object* const right) {
 	if (instanceof<Integer>(left)) {
-		Integer *int_left = (Integer* const ) left;
+		Integer* int_left = (Integer*)left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Integer(*int_left * *real_right);
+			Double* double_right = (Double*)right;
+			return new Double(*int_left * *double_right);
 
+		} else if (instanceof<Float>(right)) {
+
+			Float* float_right = (Float*)right;
+			return new Float(*int_left * *float_right);
+			
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
@@ -955,17 +1399,17 @@ ObjBase* const mult(const ObjBase *const left,
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Integer(*int_left * *int_right);
+			return new UnsignedInteger(*int_left * *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Integer(*int_left * *long_right);
+			return new Long(*int_left * *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Integer(*int_left * *long_right);
+			return new UnsignedLong(*int_left * *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
@@ -975,7 +1419,7 @@ ObjBase* const mult(const ObjBase *const left,
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Integer(*int_left * *short_right);
+			return new UnsignedInteger(*int_left * *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -985,7 +1429,7 @@ ObjBase* const mult(const ObjBase *const left,
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Integer(*int_left * *byte_right);
+			return new UnsignedInteger(*int_left * *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
@@ -998,10 +1442,15 @@ ObjBase* const mult(const ObjBase *const left,
 	} else if (instanceof<UnsignedInteger>(left)) {
 		UnsignedInteger *int_left = (UnsignedInteger* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedInteger(*int_left * *real_right);
+			Double* double_right = (Double*)right;
+			return new Double(*int_left * *double_right);
+
+		} if (instanceof<Float>(right)) {
+
+			Float* double_right = (Float*)right;
+			return new Float(*int_left * *double_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -1016,21 +1465,21 @@ ObjBase* const mult(const ObjBase *const left,
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new UnsignedInteger(*int_left * *long_right);
+			return new UnsignedLong(*int_left * *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new UnsignedInteger(*int_left * *long_right);
+			return new UnsignedLong(*int_left * *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
-			Short *short_right = (Short* const ) right;
+			Short *short_right = (Short* const )right;
 			return new UnsignedInteger(*int_left * *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
-			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			UnsignedShort *short_right = (UnsignedShort* const) right;
 			return new UnsignedInteger(*int_left * *short_right);
 
 		} else if (instanceof<Byte>(right)) {
@@ -1054,10 +1503,15 @@ ObjBase* const mult(const ObjBase *const left,
 	} else if (instanceof<Long>(left)) {
 		Long *long_left = (Long* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Long((long) (*long_left * *real_right));
+			Double *real_right = (Double*)right;
+			return new Double(*long_left * *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *real_right = (Float*)right;
+			return new Float(*long_left * *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -1067,7 +1521,7 @@ ObjBase* const mult(const ObjBase *const left,
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Long(*long_left * *int_right);
+			return new UnsignedLong(*long_left * *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
@@ -1077,7 +1531,7 @@ ObjBase* const mult(const ObjBase *const left,
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Long(*long_left * *long_right);
+			return new UnsignedLong(*long_left * *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
@@ -1087,7 +1541,7 @@ ObjBase* const mult(const ObjBase *const left,
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Long(*long_left * *short_right);
+			return new UnsignedLong(*long_left * *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -1110,10 +1564,15 @@ ObjBase* const mult(const ObjBase *const left,
 	} else if (instanceof<UnsignedLong>(left)) {
 		UnsignedLong *long_left = (UnsignedLong* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedLong(*long_left * *real_right);
+			Double *real_right = (Double*) right;
+			return new Double(*long_left * *real_right);
+
+		} if (instanceof<Float>(right)) {
+
+			Float *real_right = (Float*) right;
+			return new Float(*long_left * *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -1166,10 +1625,15 @@ ObjBase* const mult(const ObjBase *const left,
 	} else if (instanceof<Short>(left)) {
 		Short *long_left = (Short* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Short(*long_left * *real_right);
+			Double* real_right = (Double*)right;
+			return new Double(*long_left * *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float* real_right = (Float*)right;
+			return new Float(*long_left * *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
@@ -1222,30 +1686,35 @@ ObjBase* const mult(const ObjBase *const left,
 	} else if (instanceof<UnsignedShort>(left)) {
 		UnsignedShort *long_left = (UnsignedShort* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedShort(*long_left * *real_right);
+			Double *real_right = (Double* const )right;
+			return new Double(*long_left * *real_right);
+
+		} else if (instanceof<Float>(right)){
+			
+		    Float *real_right = (Float* const )right;
+			return new Float(*long_left * *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new UnsignedShort(*long_left * *int_right);
+			return new UnsignedInteger(*long_left * *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new UnsignedShort(*long_left * *int_right);
+			return new UnsignedInteger(*long_left * *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new UnsignedShort(*long_left * *long_right);
+			return new UnsignedLong(*long_left * *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new UnsignedShort(*long_left * *long_right);
+			return new UnsignedLong(*long_left * *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
@@ -1278,40 +1747,45 @@ ObjBase* const mult(const ObjBase *const left,
 	} else if (instanceof<Byte>(left)) {
 		Byte *long_left = (Byte* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new Byte(*long_left * *real_right);
+			Double *real_right = (Double*)right;
+			return new Double(*long_left * *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *real_right = (Float*)right;
+			return new Float(*long_left * *real_right);
 
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Byte(*long_left * *int_right);
+			return new Integer(*long_left * *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Byte(*long_left * *int_right);
+			return new UnsignedInteger(*long_left * *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Byte(*long_left * *long_right);
+			return new Long(*long_left * *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Byte(*long_left * *long_right);
+			return new UnsignedLong(*long_left * *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Byte(*long_left * *short_right);
+			return new Short(*long_left * *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Byte(*long_left * *short_right);
+			return new UnsignedShort(*long_left * *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -1321,7 +1795,7 @@ ObjBase* const mult(const ObjBase *const left,
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Byte(*long_left * *byte_right);
+			return new UnsignedByte(*long_left * *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
@@ -1334,40 +1808,45 @@ ObjBase* const mult(const ObjBase *const left,
 	} else if (instanceof<UnsignedByte>(left)) {
 		UnsignedByte *long_left = (UnsignedByte* const ) left;
 
-		if (instanceof<Real>(right)) {
+		if (instanceof<Double>(right)) {
 
-			Real *real_right = (Real* const ) right;
-			return new UnsignedByte(*long_left * *real_right);
+			Double *real_right = (Double* const) right;
+			return new Double(*long_left * *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Float(*long_left * *float_right);
 
 		} else if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new UnsignedByte(*long_left * *int_right);
+			return new UnsignedInteger(*long_left * *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new UnsignedByte(*long_left * *int_right);
+			return new UnsignedInteger(*long_left * *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new UnsignedByte(*long_left * *long_right);
+			return new UnsignedLong(*long_left * *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new UnsignedByte(*long_left * *long_right);
+			return new UnsignedLong(*long_left * *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new UnsignedByte(*long_left * *short_right);
+			return new UnsignedShort(*long_left * *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new UnsignedByte(*long_left * *short_right);
+			return new UnsignedShort(*long_left * *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
@@ -1387,60 +1866,242 @@ ObjBase* const mult(const ObjBase *const left,
 		} else {
 			return NULL;
 		}
+	} else if (instanceof<Boolean>(left)) {
+		Boolean *bool_left = (Boolean*)left;
+
+		if (instanceof<Boolean>(right)) {
+
+			Double *real_right = (Double* const) right;
+			return new Double(*bool_left * *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Float(*bool_left * *float_right);
+
+		} else if (instanceof<Integer>(right)) {
+
+			Integer *int_right = (Integer* const ) right;
+			return new Integer(*bool_left * *int_right);
+
+		} else if (instanceof<UnsignedInteger>(right)) {
+
+			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
+			return new UnsignedInteger(*bool_left * *int_right);
+
+		} else if (instanceof<Long>(right)) {
+
+			Long *long_right = (Long* const ) right;
+			return new Long(*bool_left * *long_right);
+
+		} else if (instanceof<UnsignedLong>(right)) {
+
+			UnsignedLong *long_right = (UnsignedLong* const ) right;
+			return new UnsignedLong(*bool_left * *long_right);
+
+		} else if (instanceof<Short>(right)) {
+
+			Short *short_right = (Short* const ) right;
+			return new Short(*bool_left * *short_right);
+
+		} else if (instanceof<UnsignedShort>(right)) {
+
+			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			return new UnsignedShort(*bool_left * *short_right);
+
+		} else if (instanceof<Byte>(right)) {
+
+			Byte *byte_right = (Byte* const ) right;
+			return new Byte(*bool_left * *byte_right);
+
+		} else if (instanceof<UnsignedByte>(right)) {
+
+			UnsignedByte *byte_right = (UnsignedByte* const ) right;
+			return new UnsignedByte(*bool_left * *byte_right);
+
+		} else if (instanceof<Boolean>(right)) {
+
+			Boolean *bool_right = (Boolean* const ) right;
+			return new Integer(*bool_left * *bool_right);
+
+		} else {
+			return NULL;
+		}
+	} else if (instanceof<Float>(left)) {
+		Float *long_left = (Float* const ) left;
+
+		if (instanceof<Double>(right)) {
+
+			Double *real_right = (Double* const) right;
+			return new Double(*long_left * *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Float(*long_left * *float_right);
+
+		} else if (instanceof<Integer>(right)) {
+
+			Integer *int_right = (Integer* const ) right;
+			return new Float(*long_left * *int_right);
+
+		} else if (instanceof<UnsignedInteger>(right)) {
+
+			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
+			return new Float(*long_left * *int_right);
+
+		} else if (instanceof<Long>(right)) {
+
+			Long *long_right = (Long* const ) right;
+			return new Float(*long_left * *long_right);
+
+		} else if (instanceof<UnsignedLong>(right)) {
+
+			UnsignedLong *long_right = (UnsignedLong* const ) right;
+			return new Float(*long_left * *long_right);
+
+		} else if (instanceof<Short>(right)) {
+
+			Short *short_right = (Short* const ) right;
+			return new Float(*long_left * *short_right);
+
+		} else if (instanceof<UnsignedShort>(right)) {
+
+			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			return new Float(*long_left * *short_right);
+
+		} else if (instanceof<Byte>(right)) {
+
+			Byte *byte_right = (Byte* const ) right;
+			return new Float(*long_left * *byte_right);
+
+		} else if (instanceof<UnsignedByte>(right)) {
+
+			UnsignedByte *byte_right = (UnsignedByte* const ) right;
+			return new Float(*long_left * *byte_right);
+
+		} else if (instanceof<Boolean>(right)) {
+
+			Boolean *bool_right = (Boolean* const ) right;
+			return new Float(*long_left * *bool_right);
+
+		} else {
+			return NULL;
+		}
+	} else if (instanceof<Double>(left)) {
+		Double *long_left = (Double* const ) left;
+
+		if (instanceof<Double>(right)) {
+
+			Double *real_right = (Double* const) right;
+			return new Double(*long_left * *real_right);
+
+		} else if (instanceof<Float>(right)) {
+
+			Float *float_right = (Float* const) right;
+			return new Double(*long_left * *float_right);
+
+		} else if (instanceof<Integer>(right)) {
+
+			Integer *int_right = (Integer* const ) right;
+			return new Double(*long_left * *int_right);
+
+		} else if (instanceof<UnsignedInteger>(right)) {
+
+			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
+			return new Double(*long_left * *int_right);
+
+		} else if (instanceof<Long>(right)) {
+
+			Long *long_right = (Long* const ) right;
+			return new Double(*long_left * *long_right);
+
+		} else if (instanceof<UnsignedLong>(right)) {
+
+			UnsignedLong *long_right = (UnsignedLong* const ) right;
+			return new Double(*long_left * *long_right);
+
+		} else if (instanceof<Short>(right)) {
+
+			Short *short_right = (Short* const ) right;
+			return new Double(*long_left * *short_right);
+
+		} else if (instanceof<UnsignedShort>(right)) {
+
+			UnsignedShort *short_right = (UnsignedShort* const ) right;
+			return new Double(*long_left * *short_right);
+
+		} else if (instanceof<Byte>(right)) {
+
+			Byte *byte_right = (Byte* const ) right;
+			return new Double(*long_left * *byte_right);
+
+		} else if (instanceof<UnsignedByte>(right)) {
+
+			UnsignedByte *byte_right = (UnsignedByte* const ) right;
+			return new Double(*long_left * *byte_right);
+
+		} else if (instanceof<Boolean>(right)) {
+
+			Boolean *bool_right = (Boolean* const ) right;
+			return new Double(*long_left * *bool_right);
+
+		} else {
+			return NULL;
+		}
 	} else {
 		return NULL;
 	}
 }
 
-ObjBase* const div(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const div(const Object *const left, const Object *const right) {
 	if (instanceof<Integer>(left)) {
 		Integer *int_left = (Integer* const ) left;
 
 		if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Real(*int_left / *int_right);
+			return new Double(*int_left / *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Real(*int_left / *int_right);
+			return new Double(*int_left / *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Real(*int_left / *long_right);
+			return new Double(*int_left / *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Real(*int_left / *long_right);
+			return new Double(*int_left / *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Real(*int_left / *short_right);
+			return new Double(*int_left / *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Real(*int_left / *short_right);
+			return new Double(*int_left / *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
 			Byte *byte_right = (Byte* const ) right;
-			return new Real(*int_left / *byte_right);
+			return new Double(*int_left / *byte_right);
 
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Real(*int_left / *byte_right);
+			return new Double(*int_left / *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
 			Boolean *bool_right = (Boolean* const ) right;
-			return new Real(*int_left / ((*bool_right) ? 1 : 0));
+			return new Double(*int_left / ((*bool_right) ? 1 : 0));
 
 		} else {
 			return NULL;
@@ -1451,47 +2112,47 @@ ObjBase* const div(const ObjBase *const left,
 		if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Real(*int_left / *int_right);
+			return new Double(*int_left / *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Real(*int_left / *int_right);
+			return new Double(*int_left / *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Real(*int_left / *long_right);
+			return new Double(*int_left / *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Real(*int_left / *long_right);
+			return new Double(*int_left / *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Real(*int_left / *short_right);
+			return new Double(*int_left / *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Real(*int_left / *short_right);
+			return new Double(*int_left / *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
 			Byte *byte_right = (Byte* const ) right;
-			return new Real(*int_left / *byte_right);
+			return new Double(*int_left / *byte_right);
 
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Real(*int_left / *byte_right);
+			return new Double(*int_left / *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
 			Boolean *bool_right = (Boolean* const ) right;
-			return new Real(*int_left / *bool_right);
+			return new Double(*int_left / *bool_right);
 
 		} else {
 			return NULL;
@@ -1502,47 +2163,47 @@ ObjBase* const div(const ObjBase *const left,
 		if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
 			Byte *byte_right = (Byte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
 			Boolean *bool_right = (Boolean* const ) right;
-			return new Real(*long_left / *bool_right);
+			return new Double(*long_left / *bool_right);
 
 		} else {
 			return NULL;
@@ -1553,47 +2214,47 @@ ObjBase* const div(const ObjBase *const left,
 		if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
 			Byte *byte_right = (Byte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
 			Boolean *bool_right = (Boolean* const ) right;
-			return new Real(*long_left / *bool_right);
+			return new Double(*long_left / *bool_right);
 
 		} else {
 			return NULL;
@@ -1604,47 +2265,47 @@ ObjBase* const div(const ObjBase *const left,
 		if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
 			Byte *byte_right = (Byte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
 			Boolean *bool_right = (Boolean* const ) right;
-			return new Real(*long_left / *bool_right);
+			return new Double(*long_left / *bool_right);
 
 		} else {
 			return NULL;
@@ -1655,47 +2316,47 @@ ObjBase* const div(const ObjBase *const left,
 		if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
 			Byte *byte_right = (Byte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
 			Boolean *bool_right = (Boolean* const ) right;
-			return new Real(*long_left / *bool_right);
+			return new Double(*long_left / *bool_right);
 
 		} else {
 			return NULL;
@@ -1706,47 +2367,47 @@ ObjBase* const div(const ObjBase *const left,
 		if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
 			Byte *byte_right = (Byte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
 			Boolean *bool_right = (Boolean* const ) right;
-			return new Real(*long_left / *bool_right);
+			return new Double(*long_left / *bool_right);
 
 		} else {
 			return NULL;
@@ -1757,47 +2418,47 @@ ObjBase* const div(const ObjBase *const left,
 		if (instanceof<Integer>(right)) {
 
 			Integer *int_right = (Integer* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<UnsignedInteger>(right)) {
 
 			UnsignedInteger *int_right = (UnsignedInteger* const ) right;
-			return new Real(*long_left / *int_right);
+			return new Double(*long_left / *int_right);
 
 		} else if (instanceof<Long>(right)) {
 
 			Long *long_right = (Long* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<UnsignedLong>(right)) {
 
 			UnsignedLong *long_right = (UnsignedLong* const ) right;
-			return new Real(*long_left / *long_right);
+			return new Double(*long_left / *long_right);
 
 		} else if (instanceof<Short>(right)) {
 
 			Short *short_right = (Short* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<UnsignedShort>(right)) {
 
 			UnsignedShort *short_right = (UnsignedShort* const ) right;
-			return new Real(*long_left / *short_right);
+			return new Double(*long_left / *short_right);
 
 		} else if (instanceof<Byte>(right)) {
 
 			Byte *byte_right = (Byte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<UnsignedByte>(right)) {
 
 			UnsignedByte *byte_right = (UnsignedByte* const ) right;
-			return new Real(*long_left / *byte_right);
+			return new Double(*long_left / *byte_right);
 
 		} else if (instanceof<Boolean>(right)) {
 
 			Boolean *bool_right = (Boolean* const ) right;
-			return new Real(*long_left / *bool_right);
+			return new Double(*long_left / *bool_right);
 
 		} else {
 			return NULL;
@@ -1807,8 +2468,8 @@ ObjBase* const div(const ObjBase *const left,
 	}
 }
 
-ObjBase* const mod(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const mod(const Object *const left,
+		const Object *const right) {
 	if (instanceof<Integer>(left)) {
 		Integer *int_left = (Integer* const ) left;
 
@@ -2222,8 +2883,8 @@ ObjBase* const mod(const ObjBase *const left,
 	}
 }
 
-ObjBase* const band(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const band(const Object *const left,
+		const Object *const right) {
 	if (instanceof<Integer>(left)) {
 		Integer *int_left = (Integer* const ) left;
 
@@ -2637,8 +3298,8 @@ ObjBase* const band(const ObjBase *const left,
 	}
 }
 
-ObjBase* const bor(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const bor(const Object *const left,
+		const Object *const right) {
 	if (instanceof<Integer>(left)) {
 		Integer *int_left = (Integer* const ) left;
 
@@ -3052,8 +3713,8 @@ ObjBase* const bor(const ObjBase *const left,
 	}
 }
 
-ObjBase* const bxor(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const bxor(const Object *const left,
+		const Object *const right) {
 	if (instanceof<Integer>(left)) {
 		Integer *int_left = (Integer* const ) left;
 
@@ -3467,15 +4128,15 @@ ObjBase* const bxor(const ObjBase *const left,
 	}
 }
 
-ObjBase* const land(const ObjBase *const left, const ObjBase *const right) {
+Object* const land(const Object *const left, const Object *const right) {
 	return new Boolean(left->bool_value() && right->bool_value());
 }
 
-ObjBase* const lor(const ObjBase *const left, const ObjBase *const right) {
+Object* const lor(const Object *const left, const Object *const right) {
 	return new Boolean(left->bool_value() || right->bool_value());
 }
 
-ObjBase* const bxnor(const ObjBase *const left, const ObjBase *const right) {
+Object* const bxnor(const Object *const left, const Object *const right) {
 	if (instanceof<Integer>(left)) {
 		Integer *int_left = (Integer* const ) left;
 
@@ -3889,8 +4550,8 @@ ObjBase* const bxnor(const ObjBase *const left, const ObjBase *const right) {
 	}
 }
 
-ObjBase* const lshift(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const lshift(const Object *const left,
+		const Object *const right) {
 	if (instanceof<Integer>(left)) {
 		Integer *int_left = (Integer* const ) left;
 
@@ -4304,8 +4965,8 @@ ObjBase* const lshift(const ObjBase *const left,
 	}
 }
 
-ObjBase* const rshift(const ObjBase *const left,
-		const ObjBase *const right) {
+Object* const rshift(const Object *const left,
+		const Object *const right) {
 	if (instanceof<Integer>(left)) {
 		Integer *int_left = (Integer* const ) left;
 
@@ -4719,11 +5380,11 @@ ObjBase* const rshift(const ObjBase *const left,
 	}
 }
 
-ObjBase* const lneg(const ObjBase* const value){
+Object* const lneg(const Object* const value){
 	return new Boolean(!value->bool_value());
 }
 
-ObjBase* const bneg(const ObjBase* const value){
+Object* const bneg(const Object* const value){
 	if(instanceof<Integer>(value)){
 		Integer* val = (Integer* const)value;
 		return new Integer(~*val);
@@ -4753,10 +5414,13 @@ ObjBase* const bneg(const ObjBase* const value){
 	}
 }
 
-ObjBase* const neg(const ObjBase* const value){
-	if(instanceof<Real>(value)){
-		Real* const val = (Real* const)value;
-		return new Real(-*val);
+Object* const neg(const Object* const value){
+	if(instanceof<Double>(value)){
+		Double* const val = (Double* const)value;
+		return new Double(-*val);
+	} else if(instanceof<Float>(value)){
+		Float* const val = (Float* const)value;
+		return new Float(-*val);
 	} else if(instanceof<Integer>(value)){
 		Integer* val = (Integer* const)value;
 		return new Integer(-*val);

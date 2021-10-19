@@ -8,7 +8,7 @@
 #ifndef TYPEOPUTILS_H
 #define TYPEOPUTILS_H
 
-#include "common/types/ObjBase.h"
+#include "Object.h"
 
 /**
  * The + operator is used to add any base objects together
@@ -17,55 +17,55 @@
  * @return a pointer to a base object
  */
 
-ObjBase* const add(const ObjBase* const left, const ObjBase* const right);
+Object* const add(const Object* const left, const Object* const right);
 
 /**
  * subtracts both of the binary - objects
  * @param left
  * @param right
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const sub(const ObjBase* const left, const ObjBase* const right);
+Object* const sub(const Object* const left, const Object* const right);
 
 /**
  * subtracts both of the binary * objects
  * @param left
  * @param right
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const mult(const ObjBase* const left, const ObjBase* const right);
+Object* const mult(const Object* const left, const Object* const right);
 
 /**
  * subtracts both of the binary / objects
  * @param left
  * @param right
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const div(const ObjBase* const left, const ObjBase* const right);
+Object* const div(const Object* const left, const Object* const right);
 
 /**
  * subtracts both of the binary % objects
  * @param left
  * @param right
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const mod(const ObjBase* const left, const ObjBase* const right);
+Object* const mod(const Object* const left, const Object* const right);
 
 /**
  * subtracts both of the binary & objects
  * @param left
  * @param right
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const band(const ObjBase* const left, const ObjBase* const right);
+Object* const band(const Object* const left, const Object* const right);
 
 /**
  * subtracts both of the binary | objects
  * @param left
  * @param right
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const bor(const ObjBase* const left, const ObjBase* const right);
+Object* const bor(const Object* const left, const Object* const right);
 
 /**
  * xors both of the binary or objects
@@ -74,51 +74,51 @@ ObjBase* const bor(const ObjBase* const left, const ObjBase* const right);
  * @return  left * right
  */
 
-ObjBase* const bxor(const ObjBase* const left, const ObjBase* const right);
+Object* const bxor(const Object* const left, const Object* const right);
 /**
  * subtracts both of the binary && objects
  * @param left
  * @param right
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const land(const ObjBase* const left, const ObjBase* const right);
+Object* const land(const Object* const left, const Object* const right);
 
 /**
  * subtracts both of the binary || objects
  * @param left
  * @param right
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const lor(const ObjBase* const left, const ObjBase* const right);
+Object* const lor(const Object* const left, const Object* const right);
 
 /**
  * does both of the binary ^~ or ~^ expressions
  * @param left
  * @param right
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const bxnor(const ObjBase* const left, const ObjBase* const right);
+Object* const bxnor(const Object* const left, const Object* const right);
 
 /**
  * shifts the left expression both of the binary << objects
  * @param left expression to be shifted
  * @param right  expression that evaluates to the amount that will be shifted over
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const lshift(const ObjBase* const left, const ObjBase* const right);
+Object* const lshift(const Object* const left, const Object* const right);
 
 /**
  * shifts the left expression both of the binary >> objects
  * @param left expression to be shifted
  * @param right  expression that evaluates to the amount that will be shifted over
- * @return a pointer to an objbase instance
+ * @return a pointer to an Object instance
  */
-ObjBase* const rshift(const ObjBase* const left, const ObjBase* const right);
+Object* const rshift(const Object* const left, const Object* const right);
 
-ObjBase* const bneg(const ObjBase* const value);
+Object* const bneg(const Object* const value);
 
-ObjBase* const lneg(const ObjBase* const value);
+Object* const lneg(const Object* const value);
 
-ObjBase* const neg(const ObjBase* const value);
+Object* const neg(const Object* const value);
 
 #endif /* INCLUDE_COMMON_TYPES_TYPEOPUTILS_H_ */

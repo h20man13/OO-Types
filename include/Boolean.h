@@ -10,16 +10,25 @@
 
 #include <string>
 
-#include "common/types/Object.h"
+#include "Object.h"
 
-class Boolean : public Object<bool>{
+/**
+ * @brief The boolean class is used to 
+ * 
+ */
+
+class Boolean : public Object{
+private:
+	bool value; //The value that a boolean holds
 public:
-	 Boolean(const bool value);
-	 Boolean(Boolean const* &bool_value);
-
+	 Boolean(const bool value); //The default constructor for a boolean object
+	 Boolean(const Boolean& bool_value); //The copy constructor for a boolean object
+	 
 	 operator bool();
 
+	 const std::string to_string() const; // The to string method for a booelan object
 	 const std::string get_class() const;
+	 const bool bool_value() const;
 };
 
 
