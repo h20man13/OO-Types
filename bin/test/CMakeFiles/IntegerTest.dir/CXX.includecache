@@ -11,8 +11,6 @@ Integer.h
 /home/jacob/Desktop/OO-Types/test/Integer.h
 Object.h
 /home/jacob/Desktop/OO-Types/test/Object.h
-TypeOpUtils.h
-/home/jacob/Desktop/OO-Types/test/TypeOpUtils.h
 TestUtils.h
 /home/jacob/Desktop/OO-Types/test/TestUtils.h
 
@@ -35,8 +33,4 @@ include/Object.h
 include/Object.h
 string
 -
-
-include/TypeOpUtils.h
-Object.h
-include/Object.h
 

@@ -6,5 +6,4 @@ bin/test/CMakeFiles/UnsignedShortTest.dir/__/__/test/UnsignedShortTest.cpp.o
  /home/jacob/Desktop/OO-Types/test/UnsignedShortTest.cpp
  include/Number.h
  include/Object.h
- include/TypeOpUtils.h
  include/UnsignedShort.h

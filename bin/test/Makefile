@@ -67,17 +67,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -88,6 +77,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,34 +122,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-bin/test/CMakeFiles/IntegerTest.dir/rule:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/IntegerTest.dir/rule
-.PHONY : bin/test/CMakeFiles/IntegerTest.dir/rule
+bin/test/CMakeFiles/UnsignedShortTest.dir/rule:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/UnsignedShortTest.dir/rule
+.PHONY : bin/test/CMakeFiles/UnsignedShortTest.dir/rule
 
 # Convenience name for target.
-IntegerTest: bin/test/CMakeFiles/IntegerTest.dir/rule
+UnsignedShortTest: bin/test/CMakeFiles/UnsignedShortTest.dir/rule
 
-.PHONY : IntegerTest
+.PHONY : UnsignedShortTest
 
 # fast build rule for target.
-IntegerTest/fast:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/IntegerTest.dir/build.make bin/test/CMakeFiles/IntegerTest.dir/build
-.PHONY : IntegerTest/fast
-
-# Convenience name for target.
-bin/test/CMakeFiles/FloatTest.dir/rule:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/FloatTest.dir/rule
-.PHONY : bin/test/CMakeFiles/FloatTest.dir/rule
-
-# Convenience name for target.
-FloatTest: bin/test/CMakeFiles/FloatTest.dir/rule
-
-.PHONY : FloatTest
-
-# fast build rule for target.
-FloatTest/fast:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/FloatTest.dir/build.make bin/test/CMakeFiles/FloatTest.dir/build
-.PHONY : FloatTest/fast
+UnsignedShortTest/fast:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedShortTest.dir/build.make bin/test/CMakeFiles/UnsignedShortTest.dir/build
+.PHONY : UnsignedShortTest/fast
 
 # Convenience name for target.
 bin/test/CMakeFiles/UnsignedIntegerTest.dir/rule:
@@ -167,49 +152,178 @@ UnsignedIntegerTest/fast:
 .PHONY : UnsignedIntegerTest/fast
 
 # Convenience name for target.
-bin/test/CMakeFiles/UnsignedByte.dir/rule:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/UnsignedByte.dir/rule
-.PHONY : bin/test/CMakeFiles/UnsignedByte.dir/rule
+bin/test/CMakeFiles/UnsignedByteTest.dir/rule:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/UnsignedByteTest.dir/rule
+.PHONY : bin/test/CMakeFiles/UnsignedByteTest.dir/rule
 
 # Convenience name for target.
-UnsignedByte: bin/test/CMakeFiles/UnsignedByte.dir/rule
+UnsignedByteTest: bin/test/CMakeFiles/UnsignedByteTest.dir/rule
 
-.PHONY : UnsignedByte
+.PHONY : UnsignedByteTest
 
 # fast build rule for target.
-UnsignedByte/fast:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedByte.dir/build.make bin/test/CMakeFiles/UnsignedByte.dir/build
-.PHONY : UnsignedByte/fast
+UnsignedByteTest/fast:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedByteTest.dir/build.make bin/test/CMakeFiles/UnsignedByteTest.dir/build
+.PHONY : UnsignedByteTest/fast
 
 # Convenience name for target.
-bin/test/CMakeFiles/UnsignedLong.dir/rule:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/UnsignedLong.dir/rule
-.PHONY : bin/test/CMakeFiles/UnsignedLong.dir/rule
+bin/test/CMakeFiles/DoubleTest.dir/rule:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/DoubleTest.dir/rule
+.PHONY : bin/test/CMakeFiles/DoubleTest.dir/rule
 
 # Convenience name for target.
-UnsignedLong: bin/test/CMakeFiles/UnsignedLong.dir/rule
+DoubleTest: bin/test/CMakeFiles/DoubleTest.dir/rule
 
-.PHONY : UnsignedLong
+.PHONY : DoubleTest
 
 # fast build rule for target.
-UnsignedLong/fast:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedLong.dir/build.make bin/test/CMakeFiles/UnsignedLong.dir/build
-.PHONY : UnsignedLong/fast
+DoubleTest/fast:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/DoubleTest.dir/build.make bin/test/CMakeFiles/DoubleTest.dir/build
+.PHONY : DoubleTest/fast
 
 # Convenience name for target.
-bin/test/CMakeFiles/UnsignedShortTest.dir/rule:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/UnsignedShortTest.dir/rule
-.PHONY : bin/test/CMakeFiles/UnsignedShortTest.dir/rule
+bin/test/CMakeFiles/IntegerTest.dir/rule:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/IntegerTest.dir/rule
+.PHONY : bin/test/CMakeFiles/IntegerTest.dir/rule
 
 # Convenience name for target.
-UnsignedShortTest: bin/test/CMakeFiles/UnsignedShortTest.dir/rule
+IntegerTest: bin/test/CMakeFiles/IntegerTest.dir/rule
 
-.PHONY : UnsignedShortTest
+.PHONY : IntegerTest
 
 # fast build rule for target.
-UnsignedShortTest/fast:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedShortTest.dir/build.make bin/test/CMakeFiles/UnsignedShortTest.dir/build
-.PHONY : UnsignedShortTest/fast
+IntegerTest/fast:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/IntegerTest.dir/build.make bin/test/CMakeFiles/IntegerTest.dir/build
+.PHONY : IntegerTest/fast
+
+# Convenience name for target.
+bin/test/CMakeFiles/ByteTest.dir/rule:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/ByteTest.dir/rule
+.PHONY : bin/test/CMakeFiles/ByteTest.dir/rule
+
+# Convenience name for target.
+ByteTest: bin/test/CMakeFiles/ByteTest.dir/rule
+
+.PHONY : ByteTest
+
+# fast build rule for target.
+ByteTest/fast:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/ByteTest.dir/build.make bin/test/CMakeFiles/ByteTest.dir/build
+.PHONY : ByteTest/fast
+
+# Convenience name for target.
+bin/test/CMakeFiles/FloatTest.dir/rule:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/FloatTest.dir/rule
+.PHONY : bin/test/CMakeFiles/FloatTest.dir/rule
+
+# Convenience name for target.
+FloatTest: bin/test/CMakeFiles/FloatTest.dir/rule
+
+.PHONY : FloatTest
+
+# fast build rule for target.
+FloatTest/fast:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/FloatTest.dir/build.make bin/test/CMakeFiles/FloatTest.dir/build
+.PHONY : FloatTest/fast
+
+# Convenience name for target.
+bin/test/CMakeFiles/UnsignedLongTest.dir/rule:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/UnsignedLongTest.dir/rule
+.PHONY : bin/test/CMakeFiles/UnsignedLongTest.dir/rule
+
+# Convenience name for target.
+UnsignedLongTest: bin/test/CMakeFiles/UnsignedLongTest.dir/rule
+
+.PHONY : UnsignedLongTest
+
+# fast build rule for target.
+UnsignedLongTest/fast:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedLongTest.dir/build.make bin/test/CMakeFiles/UnsignedLongTest.dir/build
+.PHONY : UnsignedLongTest/fast
+
+# Convenience name for target.
+bin/test/CMakeFiles/LongTest.dir/rule:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/LongTest.dir/rule
+.PHONY : bin/test/CMakeFiles/LongTest.dir/rule
+
+# Convenience name for target.
+LongTest: bin/test/CMakeFiles/LongTest.dir/rule
+
+.PHONY : LongTest
+
+# fast build rule for target.
+LongTest/fast:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/LongTest.dir/build.make bin/test/CMakeFiles/LongTest.dir/build
+.PHONY : LongTest/fast
+
+# Convenience name for target.
+bin/test/CMakeFiles/ShortTest.dir/rule:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f CMakeFiles/Makefile2 bin/test/CMakeFiles/ShortTest.dir/rule
+.PHONY : bin/test/CMakeFiles/ShortTest.dir/rule
+
+# Convenience name for target.
+ShortTest: bin/test/CMakeFiles/ShortTest.dir/rule
+
+.PHONY : ShortTest
+
+# fast build rule for target.
+ShortTest/fast:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/ShortTest.dir/build.make bin/test/CMakeFiles/ShortTest.dir/build
+.PHONY : ShortTest/fast
+
+__/__/test/ByteTest.o: __/__/test/ByteTest.cpp.o
+
+.PHONY : __/__/test/ByteTest.o
+
+# target to build an object file
+__/__/test/ByteTest.cpp.o:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/ByteTest.dir/build.make bin/test/CMakeFiles/ByteTest.dir/__/__/test/ByteTest.cpp.o
+.PHONY : __/__/test/ByteTest.cpp.o
+
+__/__/test/ByteTest.i: __/__/test/ByteTest.cpp.i
+
+.PHONY : __/__/test/ByteTest.i
+
+# target to preprocess a source file
+__/__/test/ByteTest.cpp.i:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/ByteTest.dir/build.make bin/test/CMakeFiles/ByteTest.dir/__/__/test/ByteTest.cpp.i
+.PHONY : __/__/test/ByteTest.cpp.i
+
+__/__/test/ByteTest.s: __/__/test/ByteTest.cpp.s
+
+.PHONY : __/__/test/ByteTest.s
+
+# target to generate assembly for a file
+__/__/test/ByteTest.cpp.s:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/ByteTest.dir/build.make bin/test/CMakeFiles/ByteTest.dir/__/__/test/ByteTest.cpp.s
+.PHONY : __/__/test/ByteTest.cpp.s
+
+__/__/test/DoubleTest.o: __/__/test/DoubleTest.cpp.o
+
+.PHONY : __/__/test/DoubleTest.o
+
+# target to build an object file
+__/__/test/DoubleTest.cpp.o:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/DoubleTest.dir/build.make bin/test/CMakeFiles/DoubleTest.dir/__/__/test/DoubleTest.cpp.o
+.PHONY : __/__/test/DoubleTest.cpp.o
+
+__/__/test/DoubleTest.i: __/__/test/DoubleTest.cpp.i
+
+.PHONY : __/__/test/DoubleTest.i
+
+# target to preprocess a source file
+__/__/test/DoubleTest.cpp.i:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/DoubleTest.dir/build.make bin/test/CMakeFiles/DoubleTest.dir/__/__/test/DoubleTest.cpp.i
+.PHONY : __/__/test/DoubleTest.cpp.i
+
+__/__/test/DoubleTest.s: __/__/test/DoubleTest.cpp.s
+
+.PHONY : __/__/test/DoubleTest.s
+
+# target to generate assembly for a file
+__/__/test/DoubleTest.cpp.s:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/DoubleTest.dir/build.make bin/test/CMakeFiles/DoubleTest.dir/__/__/test/DoubleTest.cpp.s
+.PHONY : __/__/test/DoubleTest.cpp.s
 
 __/__/test/FloatTest.o: __/__/test/FloatTest.cpp.o
 
@@ -265,32 +379,86 @@ __/__/test/IntegerTest.cpp.s:
 	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/IntegerTest.dir/build.make bin/test/CMakeFiles/IntegerTest.dir/__/__/test/IntegerTest.cpp.s
 .PHONY : __/__/test/IntegerTest.cpp.s
 
-__/__/test/UnsignedByte.o: __/__/test/UnsignedByte.cpp.o
+__/__/test/LongTest.o: __/__/test/LongTest.cpp.o
 
-.PHONY : __/__/test/UnsignedByte.o
+.PHONY : __/__/test/LongTest.o
 
 # target to build an object file
-__/__/test/UnsignedByte.cpp.o:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedByte.dir/build.make bin/test/CMakeFiles/UnsignedByte.dir/__/__/test/UnsignedByte.cpp.o
-.PHONY : __/__/test/UnsignedByte.cpp.o
+__/__/test/LongTest.cpp.o:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/LongTest.dir/build.make bin/test/CMakeFiles/LongTest.dir/__/__/test/LongTest.cpp.o
+.PHONY : __/__/test/LongTest.cpp.o
 
-__/__/test/UnsignedByte.i: __/__/test/UnsignedByte.cpp.i
+__/__/test/LongTest.i: __/__/test/LongTest.cpp.i
 
-.PHONY : __/__/test/UnsignedByte.i
+.PHONY : __/__/test/LongTest.i
 
 # target to preprocess a source file
-__/__/test/UnsignedByte.cpp.i:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedByte.dir/build.make bin/test/CMakeFiles/UnsignedByte.dir/__/__/test/UnsignedByte.cpp.i
-.PHONY : __/__/test/UnsignedByte.cpp.i
+__/__/test/LongTest.cpp.i:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/LongTest.dir/build.make bin/test/CMakeFiles/LongTest.dir/__/__/test/LongTest.cpp.i
+.PHONY : __/__/test/LongTest.cpp.i
 
-__/__/test/UnsignedByte.s: __/__/test/UnsignedByte.cpp.s
+__/__/test/LongTest.s: __/__/test/LongTest.cpp.s
 
-.PHONY : __/__/test/UnsignedByte.s
+.PHONY : __/__/test/LongTest.s
 
 # target to generate assembly for a file
-__/__/test/UnsignedByte.cpp.s:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedByte.dir/build.make bin/test/CMakeFiles/UnsignedByte.dir/__/__/test/UnsignedByte.cpp.s
-.PHONY : __/__/test/UnsignedByte.cpp.s
+__/__/test/LongTest.cpp.s:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/LongTest.dir/build.make bin/test/CMakeFiles/LongTest.dir/__/__/test/LongTest.cpp.s
+.PHONY : __/__/test/LongTest.cpp.s
+
+__/__/test/ShortTest.o: __/__/test/ShortTest.cpp.o
+
+.PHONY : __/__/test/ShortTest.o
+
+# target to build an object file
+__/__/test/ShortTest.cpp.o:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/ShortTest.dir/build.make bin/test/CMakeFiles/ShortTest.dir/__/__/test/ShortTest.cpp.o
+.PHONY : __/__/test/ShortTest.cpp.o
+
+__/__/test/ShortTest.i: __/__/test/ShortTest.cpp.i
+
+.PHONY : __/__/test/ShortTest.i
+
+# target to preprocess a source file
+__/__/test/ShortTest.cpp.i:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/ShortTest.dir/build.make bin/test/CMakeFiles/ShortTest.dir/__/__/test/ShortTest.cpp.i
+.PHONY : __/__/test/ShortTest.cpp.i
+
+__/__/test/ShortTest.s: __/__/test/ShortTest.cpp.s
+
+.PHONY : __/__/test/ShortTest.s
+
+# target to generate assembly for a file
+__/__/test/ShortTest.cpp.s:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/ShortTest.dir/build.make bin/test/CMakeFiles/ShortTest.dir/__/__/test/ShortTest.cpp.s
+.PHONY : __/__/test/ShortTest.cpp.s
+
+__/__/test/UnsignedByteTest.o: __/__/test/UnsignedByteTest.cpp.o
+
+.PHONY : __/__/test/UnsignedByteTest.o
+
+# target to build an object file
+__/__/test/UnsignedByteTest.cpp.o:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedByteTest.dir/build.make bin/test/CMakeFiles/UnsignedByteTest.dir/__/__/test/UnsignedByteTest.cpp.o
+.PHONY : __/__/test/UnsignedByteTest.cpp.o
+
+__/__/test/UnsignedByteTest.i: __/__/test/UnsignedByteTest.cpp.i
+
+.PHONY : __/__/test/UnsignedByteTest.i
+
+# target to preprocess a source file
+__/__/test/UnsignedByteTest.cpp.i:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedByteTest.dir/build.make bin/test/CMakeFiles/UnsignedByteTest.dir/__/__/test/UnsignedByteTest.cpp.i
+.PHONY : __/__/test/UnsignedByteTest.cpp.i
+
+__/__/test/UnsignedByteTest.s: __/__/test/UnsignedByteTest.cpp.s
+
+.PHONY : __/__/test/UnsignedByteTest.s
+
+# target to generate assembly for a file
+__/__/test/UnsignedByteTest.cpp.s:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedByteTest.dir/build.make bin/test/CMakeFiles/UnsignedByteTest.dir/__/__/test/UnsignedByteTest.cpp.s
+.PHONY : __/__/test/UnsignedByteTest.cpp.s
 
 __/__/test/UnsignedIntegerTest.o: __/__/test/UnsignedIntegerTest.cpp.o
 
@@ -319,32 +487,32 @@ __/__/test/UnsignedIntegerTest.cpp.s:
 	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedIntegerTest.dir/build.make bin/test/CMakeFiles/UnsignedIntegerTest.dir/__/__/test/UnsignedIntegerTest.cpp.s
 .PHONY : __/__/test/UnsignedIntegerTest.cpp.s
 
-__/__/test/UnsignedLong.o: __/__/test/UnsignedLong.cpp.o
+__/__/test/UnsignedLongTest.o: __/__/test/UnsignedLongTest.cpp.o
 
-.PHONY : __/__/test/UnsignedLong.o
+.PHONY : __/__/test/UnsignedLongTest.o
 
 # target to build an object file
-__/__/test/UnsignedLong.cpp.o:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedLong.dir/build.make bin/test/CMakeFiles/UnsignedLong.dir/__/__/test/UnsignedLong.cpp.o
-.PHONY : __/__/test/UnsignedLong.cpp.o
+__/__/test/UnsignedLongTest.cpp.o:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedLongTest.dir/build.make bin/test/CMakeFiles/UnsignedLongTest.dir/__/__/test/UnsignedLongTest.cpp.o
+.PHONY : __/__/test/UnsignedLongTest.cpp.o
 
-__/__/test/UnsignedLong.i: __/__/test/UnsignedLong.cpp.i
+__/__/test/UnsignedLongTest.i: __/__/test/UnsignedLongTest.cpp.i
 
-.PHONY : __/__/test/UnsignedLong.i
+.PHONY : __/__/test/UnsignedLongTest.i
 
 # target to preprocess a source file
-__/__/test/UnsignedLong.cpp.i:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedLong.dir/build.make bin/test/CMakeFiles/UnsignedLong.dir/__/__/test/UnsignedLong.cpp.i
-.PHONY : __/__/test/UnsignedLong.cpp.i
+__/__/test/UnsignedLongTest.cpp.i:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedLongTest.dir/build.make bin/test/CMakeFiles/UnsignedLongTest.dir/__/__/test/UnsignedLongTest.cpp.i
+.PHONY : __/__/test/UnsignedLongTest.cpp.i
 
-__/__/test/UnsignedLong.s: __/__/test/UnsignedLong.cpp.s
+__/__/test/UnsignedLongTest.s: __/__/test/UnsignedLongTest.cpp.s
 
-.PHONY : __/__/test/UnsignedLong.s
+.PHONY : __/__/test/UnsignedLongTest.s
 
 # target to generate assembly for a file
-__/__/test/UnsignedLong.cpp.s:
-	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedLong.dir/build.make bin/test/CMakeFiles/UnsignedLong.dir/__/__/test/UnsignedLong.cpp.s
-.PHONY : __/__/test/UnsignedLong.cpp.s
+__/__/test/UnsignedLongTest.cpp.s:
+	cd /home/jacob/Desktop/OO-Types && $(MAKE) -f bin/test/CMakeFiles/UnsignedLongTest.dir/build.make bin/test/CMakeFiles/UnsignedLongTest.dir/__/__/test/UnsignedLongTest.cpp.s
+.PHONY : __/__/test/UnsignedLongTest.cpp.s
 
 __/__/test/UnsignedShortTest.o: __/__/test/UnsignedShortTest.cpp.o
 
@@ -380,29 +548,45 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... IntegerTest"
-	@echo "... FloatTest"
-	@echo "... UnsignedIntegerTest"
-	@echo "... UnsignedByte"
-	@echo "... UnsignedLong"
 	@echo "... test"
 	@echo "... UnsignedShortTest"
+	@echo "... UnsignedIntegerTest"
+	@echo "... edit_cache"
+	@echo "... UnsignedByteTest"
+	@echo "... DoubleTest"
+	@echo "... IntegerTest"
+	@echo "... ByteTest"
+	@echo "... FloatTest"
+	@echo "... UnsignedLongTest"
+	@echo "... LongTest"
+	@echo "... ShortTest"
+	@echo "... __/__/test/ByteTest.o"
+	@echo "... __/__/test/ByteTest.i"
+	@echo "... __/__/test/ByteTest.s"
+	@echo "... __/__/test/DoubleTest.o"
+	@echo "... __/__/test/DoubleTest.i"
+	@echo "... __/__/test/DoubleTest.s"
 	@echo "... __/__/test/FloatTest.o"
 	@echo "... __/__/test/FloatTest.i"
 	@echo "... __/__/test/FloatTest.s"
 	@echo "... __/__/test/IntegerTest.o"
 	@echo "... __/__/test/IntegerTest.i"
 	@echo "... __/__/test/IntegerTest.s"
-	@echo "... __/__/test/UnsignedByte.o"
-	@echo "... __/__/test/UnsignedByte.i"
-	@echo "... __/__/test/UnsignedByte.s"
+	@echo "... __/__/test/LongTest.o"
+	@echo "... __/__/test/LongTest.i"
+	@echo "... __/__/test/LongTest.s"
+	@echo "... __/__/test/ShortTest.o"
+	@echo "... __/__/test/ShortTest.i"
+	@echo "... __/__/test/ShortTest.s"
+	@echo "... __/__/test/UnsignedByteTest.o"
+	@echo "... __/__/test/UnsignedByteTest.i"
+	@echo "... __/__/test/UnsignedByteTest.s"
 	@echo "... __/__/test/UnsignedIntegerTest.o"
 	@echo "... __/__/test/UnsignedIntegerTest.i"
 	@echo "... __/__/test/UnsignedIntegerTest.s"
-	@echo "... __/__/test/UnsignedLong.o"
-	@echo "... __/__/test/UnsignedLong.i"
-	@echo "... __/__/test/UnsignedLong.s"
+	@echo "... __/__/test/UnsignedLongTest.o"
+	@echo "... __/__/test/UnsignedLongTest.i"
+	@echo "... __/__/test/UnsignedLongTest.s"
 	@echo "... __/__/test/UnsignedShortTest.o"
 	@echo "... __/__/test/UnsignedShortTest.i"
 	@echo "... __/__/test/UnsignedShortTest.s"

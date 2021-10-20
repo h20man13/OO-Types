@@ -23,11 +23,11 @@ file(GLOB_RECURSE SRCFILES "${SRCDIR}/*.cpp")
 file(GLOB_RECURSE TESTFILES "${TESTDIR}/*.cpp")
 
 #set project name
-project(emulator_ide VERSION 1.0)
+project(obj_types VERSION 1.0)
 
 include_directories(${INCLUDEDIR})
 
-add_library(SRCLIB STATIC ${SRCFILES})
+add_library(OBJTYPES STATIC ${SRCFILES})
 
 add_subdirectory(bin)
 

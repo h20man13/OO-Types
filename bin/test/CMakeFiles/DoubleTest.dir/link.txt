@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/DoubleTest.dir/__/__/test/DoubleTest.cpp.o  -o DoubleTest ../../libOBJTYPES.a 

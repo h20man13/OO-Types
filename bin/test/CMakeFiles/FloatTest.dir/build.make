@@ -90,7 +90,7 @@ FloatTest_EXTERNAL_OBJECTS =
 
 bin/test/FloatTest: bin/test/CMakeFiles/FloatTest.dir/__/__/test/FloatTest.cpp.o
 bin/test/FloatTest: bin/test/CMakeFiles/FloatTest.dir/build.make
-bin/test/FloatTest: libSRCLIB.a
+bin/test/FloatTest: libOBJTYPES.a
 bin/test/FloatTest: bin/test/CMakeFiles/FloatTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jacob/Desktop/OO-Types/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable FloatTest"
 	cd /home/jacob/Desktop/OO-Types/bin/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FloatTest.dir/link.txt --verbose=$(VERBOSE)

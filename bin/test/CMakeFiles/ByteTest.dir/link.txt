@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/ByteTest.dir/__/__/test/ByteTest.cpp.o  -o ByteTest ../../libOBJTYPES.a 

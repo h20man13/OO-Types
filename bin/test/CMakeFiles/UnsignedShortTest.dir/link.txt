@@ -1,1 +1,1 @@
-/usr/bin/clang++     CMakeFiles/UnsignedShortTest.dir/__/__/test/UnsignedShortTest.cpp.o  -o UnsignedShortTest ../../libSRCLIB.a 
+/usr/bin/clang++     CMakeFiles/UnsignedShortTest.dir/__/__/test/UnsignedShortTest.cpp.o  -o UnsignedShortTest ../../libOBJTYPES.a 

@@ -90,7 +90,7 @@ IntegerTest_EXTERNAL_OBJECTS =
 
 bin/test/IntegerTest: bin/test/CMakeFiles/IntegerTest.dir/__/__/test/IntegerTest.cpp.o
 bin/test/IntegerTest: bin/test/CMakeFiles/IntegerTest.dir/build.make
-bin/test/IntegerTest: libSRCLIB.a
+bin/test/IntegerTest: libOBJTYPES.a
 bin/test/IntegerTest: bin/test/CMakeFiles/IntegerTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jacob/Desktop/OO-Types/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable IntegerTest"
 	cd /home/jacob/Desktop/OO-Types/bin/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/IntegerTest.dir/link.txt --verbose=$(VERBOSE)

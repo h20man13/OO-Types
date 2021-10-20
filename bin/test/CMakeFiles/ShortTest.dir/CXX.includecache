@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jacob/Desktop/OO-Types/test/ShortTest.cpp
+Short.h
+/home/jacob/Desktop/OO-Types/test/Short.h
+Object.h
+/home/jacob/Desktop/OO-Types/test/Object.h
+TestUtils.h
+/home/jacob/Desktop/OO-Types/test/TestUtils.h
+
+/home/jacob/Desktop/OO-Types/test/TestUtils.h
+iostream
+-
+string
+-
+stdlib.h
+-
+
+include/Number.h
+Object.h
+include/Object.h
+
+include/Object.h
+string
+-
+
+include/Short.h
+Number.h
+include/Number.h
+

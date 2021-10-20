@@ -1,32 +1,74 @@
-Start testing: Oct 17 19:59 EDT
+Start testing: Oct 19 21:31 EDT
 ----------------------------------------------------------
-1/6 Testing: FloatTest
-1/6 Test: FloatTest
-Command: "/home/jacob/Desktop/OO-Types/bin/test/FloatTest"
+1/10 Testing: ByteTest
+1/10 Test: ByteTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/ByteTest"
 Directory: /home/jacob/Desktop/OO-Types/bin/test
-"FloatTest" start time: Oct 17 19:59 EDT
+"ByteTest" start time: Oct 19 21:31 EDT
 Output:
 ----------------------------------------------------------
-Success: Test addition_float_test passed
-Success: Test boolean_float_test passed
-Success: Test string_float_test passed
-Success: Test class_float_test passed
+Success: Test binary_operation_byte_test passed
+Success: Test unary_operation_byte_test passed
+Success: Test boolean_byte_test passed
+Success: Test string_byte_test passed
+Success: Test class_byte_test passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"ByteTest" end time: Oct 19 21:31 EDT
+"ByteTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/10 Testing: DoubleTest
+2/10 Test: DoubleTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/DoubleTest"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"DoubleTest" start time: Oct 19 21:31 EDT
+Output:
+----------------------------------------------------------
+Success: Test binary_operation_double_test passed
+Success: Test unary_operation_double_test passed
+Success: Test boolean_double_test passed
+Success: Test string_double_test passed
+Success: Test class_double_test passed
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"FloatTest" end time: Oct 17 19:59 EDT
+"DoubleTest" end time: Oct 19 21:31 EDT
+"DoubleTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/10 Testing: FloatTest
+3/10 Test: FloatTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/FloatTest"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"FloatTest" start time: Oct 19 21:31 EDT
+Output:
+----------------------------------------------------------
+Success: Test binary_operation_float_test passed
+Success: Test unary_operation_float_test passed
+Success: Test boolean_float_test passed
+Success: Test string_float_test passed
+Success: Test class_float_test passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"FloatTest" end time: Oct 19 21:31 EDT
 "FloatTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/6 Testing: IntegerTest
-2/6 Test: IntegerTest
+4/10 Testing: IntegerTest
+4/10 Test: IntegerTest
 Command: "/home/jacob/Desktop/OO-Types/bin/test/IntegerTest"
 Directory: /home/jacob/Desktop/OO-Types/bin/test
-"IntegerTest" start time: Oct 17 19:59 EDT
+"IntegerTest" start time: Oct 19 21:31 EDT
 Output:
 ----------------------------------------------------------
-Success: Test addition_integer_test passed
+Success: Test binary_operation_integer_test passed
+Success: Test unary_operation_integer_test passed
 Success: Test boolean_integer_test passed
 Success: Test string_integer_test passed
 Success: Test class_integer_test passed
@@ -34,18 +76,59 @@ Success: Test class_integer_test passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"IntegerTest" end time: Oct 17 19:59 EDT
+"IntegerTest" end time: Oct 19 21:31 EDT
 "IntegerTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/6 Testing: UnsignedByte
-3/6 Test: UnsignedByte
-Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedByte"
+5/10 Testing: LongTest
+5/10 Test: LongTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/LongTest"
 Directory: /home/jacob/Desktop/OO-Types/bin/test
-"UnsignedByte" start time: Oct 17 19:59 EDT
+"LongTest" start time: Oct 19 21:31 EDT
 Output:
 ----------------------------------------------------------
-Success: Test addition_unsigned_byte_test passed
+Success: Test binary_operation_long_test passed
+Success: Test unary_operation_long_test passed
+Success: Test boolean_long_test passed
+Success: Test string_long_test passed
+Success: Test class_long_test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"LongTest" end time: Oct 19 21:31 EDT
+"LongTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/10 Testing: ShortTest
+6/10 Test: ShortTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/ShortTest"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"ShortTest" start time: Oct 19 21:31 EDT
+Output:
+----------------------------------------------------------
+Success: Test binary_operation_short_test passed
+Success: Test unary_operation_short_test passed
+Success: Test boolean_short_test passed
+Success: Test string_short_test passed
+Success: Test class_short_test passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ShortTest" end time: Oct 19 21:31 EDT
+"ShortTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/10 Testing: UnsignedByteTest
+7/10 Test: UnsignedByteTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedByteTest"
+Directory: /home/jacob/Desktop/OO-Types/bin/test
+"UnsignedByteTest" start time: Oct 19 21:31 EDT
+Output:
+----------------------------------------------------------
+Success: Test binary_operation_unsigned_byte_test passed
+Success: Test unary_operation_unsigned_byte_test passed
 Success: Test boolean_unsigned_byte_test passed
 Success: Test string_unsigned_byte_test passed
 Success: Test class_unsigned_byte_test passed
@@ -53,18 +136,19 @@ Success: Test class_unsigned_byte_test passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UnsignedByte" end time: Oct 17 19:59 EDT
-"UnsignedByte" time elapsed: 00:00:00
+"UnsignedByteTest" end time: Oct 19 21:31 EDT
+"UnsignedByteTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/6 Testing: UnsignedIntegerTest
-4/6 Test: UnsignedIntegerTest
+8/10 Testing: UnsignedIntegerTest
+8/10 Test: UnsignedIntegerTest
 Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedIntegerTest"
 Directory: /home/jacob/Desktop/OO-Types/bin/test
-"UnsignedIntegerTest" start time: Oct 17 19:59 EDT
+"UnsignedIntegerTest" start time: Oct 19 21:31 EDT
 Output:
 ----------------------------------------------------------
-Success: Test addition_unsigned_integer_test passed
+Success: Test binary_operation_unsigned_integer_test passed
+Success: Test unary_operation_unsigned_integer_test passed
 Success: Test boolean_unsigned_integer_test passed
 Success: Test string_unsigned_integer_test passed
 Success: Test class_unsigned_integer_test passed
@@ -72,18 +156,19 @@ Success: Test class_unsigned_integer_test passed
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"UnsignedIntegerTest" end time: Oct 17 19:59 EDT
+"UnsignedIntegerTest" end time: Oct 19 21:31 EDT
 "UnsignedIntegerTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/6 Testing: UnsignedLong
-5/6 Test: UnsignedLong
-Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedLong"
+9/10 Testing: UnsignedLongTest
+9/10 Test: UnsignedLongTest
+Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedLongTest"
 Directory: /home/jacob/Desktop/OO-Types/bin/test
-"UnsignedLong" start time: Oct 17 19:59 EDT
+"UnsignedLongTest" start time: Oct 19 21:31 EDT
 Output:
 ----------------------------------------------------------
-Success: Test addition_unsigned_long_test passed
+Success: Test binary_operation_unsigned_long_test passed
+Success: Test unary_operation_unsigned_long_test passed
 Success: Test boolean_unsigned_long_test passed
 Success: Test string_unsigned_long_test passed
 Success: Test class_unsigned_long_test passed
@@ -91,27 +176,28 @@ Success: Test class_unsigned_long_test passed
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UnsignedLong" end time: Oct 17 19:59 EDT
-"UnsignedLong" time elapsed: 00:00:00
+"UnsignedLongTest" end time: Oct 19 21:31 EDT
+"UnsignedLongTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/6 Testing: UnsignedShortTest
-6/6 Test: UnsignedShortTest
+10/10 Testing: UnsignedShortTest
+10/10 Test: UnsignedShortTest
 Command: "/home/jacob/Desktop/OO-Types/bin/test/UnsignedShortTest"
 Directory: /home/jacob/Desktop/OO-Types/bin/test
-"UnsignedShortTest" start time: Oct 17 19:59 EDT
+"UnsignedShortTest" start time: Oct 19 21:31 EDT
 Output:
 ----------------------------------------------------------
-Success: Test addition_unsigned_short_test passed
+Success: Test binary_operation_unsigned_short_test passed
+Success: Test unary_operation_unsigned_short_test passed
 Success: Test boolean_unsigned_short_test passed
 Success: Test string_unsigned_short_test passed
 Success: Test class_unsigned_short_test passed
 <end of output>
-Test time =   0.00 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"UnsignedShortTest" end time: Oct 17 19:59 EDT
+"UnsignedShortTest" end time: Oct 19 21:31 EDT
 "UnsignedShortTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 17 19:59 EDT
+End testing: Oct 19 21:31 EDT

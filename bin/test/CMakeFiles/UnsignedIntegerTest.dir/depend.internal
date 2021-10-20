@@ -6,5 +6,4 @@ bin/test/CMakeFiles/UnsignedIntegerTest.dir/__/__/test/UnsignedIntegerTest.cpp.o
  /home/jacob/Desktop/OO-Types/test/UnsignedIntegerTest.cpp
  include/Number.h
  include/Object.h
- include/TypeOpUtils.h
  include/UnsignedInteger.h

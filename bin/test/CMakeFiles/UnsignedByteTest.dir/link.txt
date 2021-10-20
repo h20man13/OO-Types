@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/UnsignedByteTest.dir/__/__/test/UnsignedByteTest.cpp.o  -o UnsignedByteTest ../../libOBJTYPES.a 

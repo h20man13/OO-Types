@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/LongTest.dir/__/__/test/LongTest.cpp.o  -o LongTest ../../libOBJTYPES.a 

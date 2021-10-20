@@ -90,7 +90,7 @@ UnsignedIntegerTest_EXTERNAL_OBJECTS =
 
 bin/test/UnsignedIntegerTest: bin/test/CMakeFiles/UnsignedIntegerTest.dir/__/__/test/UnsignedIntegerTest.cpp.o
 bin/test/UnsignedIntegerTest: bin/test/CMakeFiles/UnsignedIntegerTest.dir/build.make
-bin/test/UnsignedIntegerTest: libSRCLIB.a
+bin/test/UnsignedIntegerTest: libOBJTYPES.a
 bin/test/UnsignedIntegerTest: bin/test/CMakeFiles/UnsignedIntegerTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jacob/Desktop/OO-Types/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable UnsignedIntegerTest"
 	cd /home/jacob/Desktop/OO-Types/bin/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnsignedIntegerTest.dir/link.txt --verbose=$(VERBOSE)

@@ -1,0 +1,1 @@
+/usr/bin/clang++     CMakeFiles/ShortTest.dir/__/__/test/ShortTest.cpp.o  -o ShortTest ../../libOBJTYPES.a 

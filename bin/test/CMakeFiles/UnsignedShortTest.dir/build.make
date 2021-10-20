@@ -90,7 +90,7 @@ UnsignedShortTest_EXTERNAL_OBJECTS =
 
 bin/test/UnsignedShortTest: bin/test/CMakeFiles/UnsignedShortTest.dir/__/__/test/UnsignedShortTest.cpp.o
 bin/test/UnsignedShortTest: bin/test/CMakeFiles/UnsignedShortTest.dir/build.make
-bin/test/UnsignedShortTest: libSRCLIB.a
+bin/test/UnsignedShortTest: libOBJTYPES.a
 bin/test/UnsignedShortTest: bin/test/CMakeFiles/UnsignedShortTest.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jacob/Desktop/OO-Types/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable UnsignedShortTest"
 	cd /home/jacob/Desktop/OO-Types/bin/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnsignedShortTest.dir/link.txt --verbose=$(VERBOSE)

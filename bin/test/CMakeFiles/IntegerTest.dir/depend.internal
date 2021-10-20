@@ -7,4 +7,3 @@ bin/test/CMakeFiles/IntegerTest.dir/__/__/test/IntegerTest.cpp.o
  include/Integer.h
  include/Number.h
  include/Object.h
- include/TypeOpUtils.h

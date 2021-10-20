@@ -1,13 +1,18 @@
 #include "Integer.h"
 #include "Object.h"
-#include "TypeOpUtils.h"
 #include "TestUtils.h"
 
-bool addition_integer_test(){
+bool binary_operation_integer_test(){
     Integer i1(30);
     Integer i2(10);
 
     return (i1 + i2) == 40;
+}
+
+bool unary_operation_integer_test(){
+    Integer i1(30);
+
+    return -i1 == -30;
 }
 
 bool boolean_integer_test(){
@@ -30,7 +35,8 @@ bool class_integer_test(){
 }
 
 int main(){
-    run_test(addition_integer_test);
+    run_test(binary_operation_integer_test);
+    run_test(unary_operation_integer_test);
     run_test(boolean_integer_test);
     run_test(string_integer_test);
     run_test(class_integer_test);

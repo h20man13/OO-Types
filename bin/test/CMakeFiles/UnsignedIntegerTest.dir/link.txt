@@ -1,1 +1,1 @@
-/usr/bin/clang++     CMakeFiles/UnsignedIntegerTest.dir/__/__/test/UnsignedIntegerTest.cpp.o  -o UnsignedIntegerTest ../../libSRCLIB.a 
+/usr/bin/clang++     CMakeFiles/UnsignedIntegerTest.dir/__/__/test/UnsignedIntegerTest.cpp.o  -o UnsignedIntegerTest ../../libOBJTYPES.a 

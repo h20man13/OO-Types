@@ -18,7 +18,7 @@ Long::operator long(){
 }
 
 const std::string Long::get_class() const {
-	return "Unsigned Long";
+	return "Long";
 }
 
 const std::string Long::to_string() const {
